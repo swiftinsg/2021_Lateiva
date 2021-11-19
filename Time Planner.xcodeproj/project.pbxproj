@@ -54,8 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				C5267CD92746316200816DC1 /* Time_PlannerApp.swift */,
-				C53A5F5D2747575C008B9629 /* Events.swift */,
 				C5267CDB2746316200816DC1 /* ContentView.swift */,
+				C53A5F5D2747575C008B9629 /* Events.swift */,
 				C5267CDD2746316500816DC1 /* Assets.xcassets */,
 				C5267CDF2746316500816DC1 /* Preview Content */,
 			);

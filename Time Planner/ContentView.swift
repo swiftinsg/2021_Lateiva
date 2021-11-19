@@ -19,28 +19,34 @@ struct ContentView: View {
                 .multilineTextAlignment(.leading)
                 .font(.largeTitle)
                 .padding([.top, .leading, .trailing])
-//                .font(.headline)
-                
+            //                .font(.headline)
+            
             Text("Tap on one of your events to continue")
                 .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                 .padding([.top, .leading, .trailing])
-                
+            
             List(events) { events in
                 VStack(alignment:.leading){
-                Text(events.name)
+                    
+                    Text(events.name)
                         .font(.system(size: 40))
-                        .foregroundColor(Color.purple)
-                        .bold()
+                        .foregroundColor(Color(hue: 0.78, saturation: 1.0, brightness: 0.722))
+                        .fontWeight(.heavy)
+                    
                     Spacer()
-                Text(events.Location)
+                    Text(events.Location)
                         .font(.system(size: 20))
-                        .foregroundColor(.purple)
-                        Spacer()
-                Text(events.time)
+                        .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+                    
+                    Spacer()
+                    Text(events.time)
                         .font(.system(size: 20))
-                        .foregroundColor(.purple)
-                }
+                        .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+                    Spacer()
+                }.listRowBackground(Color(red: 0.9568627450980393, green: 0.9215686274509803, blue: 1.0))
             }
+            
+            
             
         }
     }

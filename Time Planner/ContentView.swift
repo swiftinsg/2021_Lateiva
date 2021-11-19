@@ -18,13 +18,12 @@ struct ContentView: View {
                 .foregroundColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))
                 .multilineTextAlignment(.leading)
                 .font(.largeTitle)
-                .padding(.leading)
+                .padding([.top, .leading, .trailing])
 //                .font(.headline)
                 
-            
             Text("Tap on one of your events to continue")
                 .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                .padding()
+                .padding([.top, .leading, .trailing])
                 
             List(events) { events in
                 VStack(alignment:.leading){

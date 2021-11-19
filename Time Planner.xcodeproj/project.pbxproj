@@ -11,6 +11,7 @@
 		C5267CDC2746316200816DC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5267CDB2746316200816DC1 /* ContentView.swift */; };
 		C5267CDE2746316500816DC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5267CDD2746316500816DC1 /* Assets.xcassets */; };
 		C5267CE12746316500816DC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5267CE02746316500816DC1 /* Preview Assets.xcassets */; };
+		C53A5F5E2747575C008B9629 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A5F5D2747575C008B9629 /* Events.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		C5267CDB2746316200816DC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C5267CDD2746316500816DC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5267CE02746316500816DC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C53A5F5D2747575C008B9629 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				C5267CD92746316200816DC1 /* Time_PlannerApp.swift */,
+				C53A5F5D2747575C008B9629 /* Events.swift */,
 				C5267CDB2746316200816DC1 /* ContentView.swift */,
 				C5267CDD2746316500816DC1 /* Assets.xcassets */,
 				C5267CDF2746316500816DC1 /* Preview Content */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C53A5F5E2747575C008B9629 /* Events.swift in Sources */,
 				C5267CDC2746316200816DC1 /* ContentView.swift in Sources */,
 				C5267CDA2746316200816DC1 /* Time_PlannerApp.swift in Sources */,
 			);

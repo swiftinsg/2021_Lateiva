@@ -20,6 +20,8 @@ struct ContentView: View {
                 .font(.system(size: 50))
                 .padding([.top, .leading, .trailing])
             
+            Text("")
+            
             Text("Tap on one of your events to continue")
                 .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                 .font(.system(size: 18))
@@ -31,7 +33,7 @@ struct ContentView: View {
                     Spacer()
                     
                     Text(events.name)
-                        .font(.system(size: 39))
+                        .font(.system(size: 35))
                         .foregroundColor(Color(hue: 0.78, saturation: 1.0, brightness: 0.722))
                         .fontWeight(.heavy)
                     
@@ -40,20 +42,20 @@ struct ContentView: View {
                     Spacer()
                     
                     Text(events.Location)
-                        .font(.system(size: 24))
+                        .font(.system(size: 20))
                         .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                     
                     Spacer()
                     
                     HStack{
                         Text(events.time)
-                            .font(.system(size: 24))
+                            .font(.system(size: 20))
                             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                         
                         Spacer()
                         
                         ZStack{
-                            RoundedRectangle(cornerRadius: 5)
+                            RoundedRectangle(cornerRadius: 15)
                                 . frame(width: 100, height:50)
                                 .foregroundColor(Color(red: 0.6431372549019608, green: 0.6078431372549019, blue: 0.9568627450980393))
                             Text("Edit")

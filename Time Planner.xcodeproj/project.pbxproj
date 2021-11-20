@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C520532D2748F28900F24D17 /* editingEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C520532C2748F28900F24D17 /* editingEvents.swift */; };
+		C520532F274910B900F24D17 /* newEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C520532E274910B900F24D17 /* newEventVC.swift */; };
+		C52053312749116100F24D17 /* startTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52053302749116000F24D17 /* startTimeVC.swift */; };
 		C5267CDA2746316200816DC1 /* Time_PlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5267CD92746316200816DC1 /* Time_PlannerApp.swift */; };
 		C5267CDC2746316200816DC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5267CDB2746316200816DC1 /* ContentView.swift */; };
 		C5267CDE2746316500816DC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5267CDD2746316500816DC1 /* Assets.xcassets */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C520532C2748F28900F24D17 /* editingEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editingEvents.swift; sourceTree = "<group>"; };
+		C520532E274910B900F24D17 /* newEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newEventVC.swift; sourceTree = "<group>"; };
+		C52053302749116000F24D17 /* startTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startTimeVC.swift; sourceTree = "<group>"; };
 		C5267CD62746316200816DC1 /* Time Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5267CD92746316200816DC1 /* Time_PlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_PlannerApp.swift; sourceTree = "<group>"; };
 		C5267CDB2746316200816DC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +61,9 @@
 			children = (
 				C5267CD92746316200816DC1 /* Time_PlannerApp.swift */,
 				C5267CDB2746316200816DC1 /* ContentView.swift */,
+				C520532C2748F28900F24D17 /* editingEvents.swift */,
+				C520532E274910B900F24D17 /* newEventVC.swift */,
+				C52053302749116000F24D17 /* startTimeVC.swift */,
 				C53A5F5D2747575C008B9629 /* Events.swift */,
 				C5267CDD2746316500816DC1 /* Assets.xcassets */,
 				C5267CDF2746316500816DC1 /* Preview Content */,
@@ -140,9 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C52053312749116100F24D17 /* startTimeVC.swift in Sources */,
 				C53A5F5E2747575C008B9629 /* Events.swift in Sources */,
 				C5267CDC2746316200816DC1 /* ContentView.swift in Sources */,
+				C520532F274910B900F24D17 /* newEventVC.swift in Sources */,
 				C5267CDA2746316200816DC1 /* Time_PlannerApp.swift in Sources */,
+				C520532D2748F28900F24D17 /* editingEvents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

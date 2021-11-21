@@ -11,9 +11,9 @@ struct newEventVC: View {
     //  @Environment(\.presentationMode) var presentationMode
     @Binding var evente: [Event]
     @State var eventsss = Event(name: "",
-                              Location: "",
-                              date: "",
-                              time: "")
+                                Location: "",
+                                date: "",
+                                time: "")
     @State private var date = Date()
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
@@ -38,25 +38,27 @@ struct newEventVC: View {
                         in: dateRange,
                         displayedComponents: [.date, .hourAndMinute]
                     )
-                     .datePickerStyle(GraphicalDatePickerStyle())
+                        .datePickerStyle(GraphicalDatePickerStyle())
                         .font(.system(size: 18))
                         .foregroundColor(Color(red: 0.796, green: 0.796, blue: 0.805))
                         .padding(.bottom)
                     
                 }
                 
-                 Section {
-                 Button("Save") {
-                 //Actions
-                 }
-                 
-                 Button("Discard events") {
-                //Actions
-                 }
-                 .foregroundColor(.red)
-                 }
+                Section {
+                    Button("Save") {
+                        //Actions
+                    }
+                    .foregroundColor(.blue)
+                    
+                    Button("Discard events") {
+                        //Actions
+                    }
+                    .foregroundColor(.red)
+                }
             }
             .navigationTitle("New events")
+            .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
         }
     }
 }

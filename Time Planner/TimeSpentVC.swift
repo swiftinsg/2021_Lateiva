@@ -22,14 +22,14 @@ struct TimeSpentVC: View {
     
     var body: some View {
         VStack(alignment:.leading){
-            Text("Activity Sets")
+            Text("What you need to do")
                 .fontWeight(.heavy)
                 .foregroundColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))
                 .multilineTextAlignment(.leading)
-                .font(.system(size: 50))
+                .font(.system(size: 35))
                 .padding(.all)
             
-            Text("Choose which set of activities would you like to use to get ready.")
+            Text("Leave your house by 6:00am")
                 .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                 .font(.system(size: 18))
                 .lineLimit(3)
@@ -43,7 +43,7 @@ struct TimeSpentVC: View {
                             .font(.system(size: 20))
                             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                             .fontWeight(.bold)
-                        .padding(.vertical)
+                            .padding(.bottom)
                         
                         Spacer()
                         
@@ -51,7 +51,7 @@ struct TimeSpentVC: View {
                             .font(.system(size: 18))
                             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                             .fontWeight(.medium)
-                        .padding(.vertical)
+                            .padding(.bottom)
                     }
                     Spacer()
                     HStack {
@@ -59,7 +59,6 @@ struct TimeSpentVC: View {
                             .font(.system(size: 18))
                             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                             .fontWeight(.regular)
-                            .padding(.bottom)
                         
                         Spacer()
                         
@@ -67,11 +66,15 @@ struct TimeSpentVC: View {
                             .font(.system(size: 18))
                             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                             .fontWeight(.regular)
-                            .padding(.bottom)
                     }
                 }
-                .listRowBackground(Color(hue: 0.742, saturation: 0.09, brightness: 1.0))
+                .padding()
+                .background(Color(hue: 0.742, saturation: 0.149, brightness: 0.99))
+                .cornerRadius(20)
+                .padding(.vertical, 1)
+                .listRowSeparator(.hidden)
             }
+            .listStyle(.plain)
         }
     }
 }

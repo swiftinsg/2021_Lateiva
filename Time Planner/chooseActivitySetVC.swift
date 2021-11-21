@@ -45,12 +45,12 @@ struct chooseActivitySetVC: View {
             List(set) { set in
                 VStack(alignment:.leading){
                     Text(set.name)
-                        .font(.system(size: 24))
+                        .font(.system(size: 20))
                         .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                         .fontWeight(.semibold)
                         .padding(.vertical)
                 }
-                .listRowBackground(Color(hue: 0.742, saturation: 0.09, brightness: 1.0))
+                .listRowBackground(Color(hue: 0.742, saturation: 0.044, brightness: 0.979))
             }
         }
     }

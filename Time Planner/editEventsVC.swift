@@ -12,9 +12,9 @@ struct editEvents: View {
     //  @Environment(\.presentationMode) var presentationMode
     @Binding var event: [Event]
     @State var eventss = Event(name: "",
-                              Location: "",
-                              date: "",
-                              time: "")
+                               Location: "",
+                               date: "",
+                               time: "")
     @State private var date = Date()
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
@@ -31,13 +31,13 @@ struct editEvents: View {
                 Section(header: Text("Information")) {
                     TextField("Name", text: $eventss.name).listRowSeparator(.visible)
                     
-             //       Spacer().listRowSeparator(.hidden)
+                    //       Spacer().listRowSeparator(.hidden)
                     
                     TextField("Location", text: $eventss.Location).listRowSeparator(.visible)
                     
-                //Spacer()
+                    //Spacer()
                     
-                 //   Text("Date and time:").listRowSeparator(.hidden)
+                    //   Text("Date and time:").listRowSeparator(.hidden)
                     
                     DatePicker(
                         "Date",
@@ -45,25 +45,27 @@ struct editEvents: View {
                         in: dateRange,
                         displayedComponents: [.date, .hourAndMinute]
                     )
-                     .datePickerStyle(GraphicalDatePickerStyle())
+                        .datePickerStyle(GraphicalDatePickerStyle())
                         .font(.system(size: 18))
                         .foregroundColor(Color(red: 0.796, green: 0.796, blue: 0.805))
                         .padding(.bottom)
                     
                 }
                 
-                 Section {
-                 Button("Save") {
-                 //Actions
-                 }
-                 
-                 Button("Discard events") {
-                //Actions
-                 }
-                 .foregroundColor(.red)
-                 }
+                Section {
+                    Button("Save") {
+                        //Actions
+                    }
+                    .foregroundColor(.blue)
+                    
+                    Button("Discard events") {
+                        //Actions
+                    }
+                    .foregroundColor(.red)
+                }
             }
             .navigationTitle("New events")
+            .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
         }
     }
 }

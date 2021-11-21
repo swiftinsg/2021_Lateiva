@@ -27,25 +27,27 @@ struct startTimeVC: View {
                 .foregroundColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))
                 .multilineTextAlignment(.leading)
                 .font(.system(size: 50))
-                .padding([.top, .leading, .trailing])
+                .padding(.all)
             
-            Text("")
             
-            Text("What time would you like to start?")
+            Text("When would you like to start getting ready?")
                 .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                .font(.system(size: 22))
-                .padding([.leading, .trailing])
+                .font(.system(size: 24))
+                .lineLimit(3)
+                .padding(.horizontal)
+                .fixedSize(horizontal: false, vertical: true)
             
-            Text("")
-                .frame(minWidth: 10, maxWidth: .infinity, minHeight: 20, maxHeight: 100)
+            Spacer()
             
             DatePicker(
                 "",
                 selection: $date,
                 in: dateRange,
-                displayedComponents: [.hourAndMinute]
-            ).datePickerStyle(WheelDatePickerStyle())
-                .padding([.top, .bottom, .trailing])
+                displayedComponents: [.date,.hourAndMinute]
+            ).datePickerStyle(GraphicalDatePickerStyle())
+                .padding(.all)
+                .font(.system(size: 13))
+                .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
             
             Spacer()
             

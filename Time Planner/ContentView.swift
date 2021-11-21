@@ -58,20 +58,23 @@ struct ContentView: View {
                             RoundedRectangle(cornerRadius: 15)
                                 . frame(width: 100, height:50)
                                 .foregroundColor(Color(red: 0.6431372549019608, green: 0.6078431372549019, blue: 0.9568627450980393))
-                            Text("Edit")
-                                .foregroundColor(.white)
+                            
+                            Button {
+                                //action
+                            } label: {
+                                Text("Edit")
+                                    .foregroundColor(.white)
+                            }.frame(width: 100, height:50)
                         }
                     }
-                    
-                }.listRowBackground(Color(hue: 0.742, saturation: 0.149, brightness: 0.99))
-                
+                }   .padding()
+                    .background(Color(hue: 0.742, saturation: 0.149, brightness: 0.99))
+                    .cornerRadius(20)
+                    .padding(.vertical, 1)
+                    .listRowSeparator(.hidden)
             }
-            
-            // .onAppear(){
-            //      background(Color(red: 1.0, green: 1.0, blue: 1.0))
-            //}.background(Color(red: 1.0, green: 1.0, blue: 1.0))
+            .listStyle(.plain)
         }
-        //   .background(Color(red: 1.0, green: 1.0, blue: 1.0))
     }
 }
 

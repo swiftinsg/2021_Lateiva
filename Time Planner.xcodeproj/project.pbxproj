@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C520532D2748F28900F24D17 /* editingEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C520532C2748F28900F24D17 /* editingEvents.swift */; };
 		C520532F274910B900F24D17 /* newEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C520532E274910B900F24D17 /* newEventVC.swift */; };
 		C52053312749116100F24D17 /* startTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52053302749116000F24D17 /* startTimeVC.swift */; };
+		C5240255274A24B9005B2D07 /* chooseActivitySetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5240254274A24B9005B2D07 /* chooseActivitySetVC.swift */; };
+		C5240257274A2513005B2D07 /* activitiesInSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5240256274A2513005B2D07 /* activitiesInSet.swift */; };
+		C5240259274A277D005B2D07 /* ActivitySets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5240258274A277D005B2D07 /* ActivitySets.swift */; };
+		C524025D274A2F6D005B2D07 /* TimeSpend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524025C274A2F6D005B2D07 /* TimeSpend.swift */; };
+		C524025F274A2FDB005B2D07 /* TimeSpentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524025E274A2FDB005B2D07 /* TimeSpentVC.swift */; };
+		C5240261274A6B72005B2D07 /* editEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5240260274A6B72005B2D07 /* editEvents.swift */; };
+		C524027D274A86B6005B2D07 /* ActivitySetsForEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524027C274A86B5005B2D07 /* ActivitySetsForEditVC.swift */; };
 		C5267CDA2746316200816DC1 /* Time_PlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5267CD92746316200816DC1 /* Time_PlannerApp.swift */; };
 		C5267CDC2746316200816DC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5267CDB2746316200816DC1 /* ContentView.swift */; };
 		C5267CDE2746316500816DC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5267CDD2746316500816DC1 /* Assets.xcassets */; };
@@ -18,9 +24,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C520532C2748F28900F24D17 /* editingEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editingEvents.swift; sourceTree = "<group>"; };
 		C520532E274910B900F24D17 /* newEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newEventVC.swift; sourceTree = "<group>"; };
 		C52053302749116000F24D17 /* startTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startTimeVC.swift; sourceTree = "<group>"; };
+		C5240254274A24B9005B2D07 /* chooseActivitySetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseActivitySetVC.swift; sourceTree = "<group>"; };
+		C5240256274A2513005B2D07 /* activitiesInSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activitiesInSet.swift; sourceTree = "<group>"; };
+		C5240258274A277D005B2D07 /* ActivitySets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySets.swift; sourceTree = "<group>"; };
+		C524025C274A2F6D005B2D07 /* TimeSpend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSpend.swift; sourceTree = "<group>"; };
+		C524025E274A2FDB005B2D07 /* TimeSpentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSpentVC.swift; sourceTree = "<group>"; };
+		C5240260274A6B72005B2D07 /* editEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editEvents.swift; sourceTree = "<group>"; };
+		C524027C274A86B5005B2D07 /* ActivitySetsForEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySetsForEditVC.swift; sourceTree = "<group>"; };
 		C5267CD62746316200816DC1 /* Time Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5267CD92746316200816DC1 /* Time_PlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_PlannerApp.swift; sourceTree = "<group>"; };
 		C5267CDB2746316200816DC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,9 +73,15 @@
 			children = (
 				C5267CD92746316200816DC1 /* Time_PlannerApp.swift */,
 				C5267CDB2746316200816DC1 /* ContentView.swift */,
-				C520532C2748F28900F24D17 /* editingEvents.swift */,
+				C524027C274A86B5005B2D07 /* ActivitySetsForEditVC.swift */,
+				C5240260274A6B72005B2D07 /* editEvents.swift */,
 				C520532E274910B900F24D17 /* newEventVC.swift */,
 				C52053302749116000F24D17 /* startTimeVC.swift */,
+				C5240254274A24B9005B2D07 /* chooseActivitySetVC.swift */,
+				C524025E274A2FDB005B2D07 /* TimeSpentVC.swift */,
+				C5240256274A2513005B2D07 /* activitiesInSet.swift */,
+				C524025C274A2F6D005B2D07 /* TimeSpend.swift */,
+				C5240258274A277D005B2D07 /* ActivitySets.swift */,
 				C53A5F5D2747575C008B9629 /* Events.swift */,
 				C5267CDD2746316500816DC1 /* Assets.xcassets */,
 				C5267CDF2746316500816DC1 /* Preview Content */,
@@ -150,11 +168,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C52053312749116100F24D17 /* startTimeVC.swift in Sources */,
+				C524025D274A2F6D005B2D07 /* TimeSpend.swift in Sources */,
 				C53A5F5E2747575C008B9629 /* Events.swift in Sources */,
 				C5267CDC2746316200816DC1 /* ContentView.swift in Sources */,
+				C524025F274A2FDB005B2D07 /* TimeSpentVC.swift in Sources */,
+				C5240255274A24B9005B2D07 /* chooseActivitySetVC.swift in Sources */,
 				C520532F274910B900F24D17 /* newEventVC.swift in Sources */,
+				C5240257274A2513005B2D07 /* activitiesInSet.swift in Sources */,
+				C524027D274A86B6005B2D07 /* ActivitySetsForEditVC.swift in Sources */,
+				C5240259274A277D005B2D07 /* ActivitySets.swift in Sources */,
 				C5267CDA2746316200816DC1 /* Time_PlannerApp.swift in Sources */,
-				C520532D2748F28900F24D17 /* editingEvents.swift in Sources */,
+				C5240261274A6B72005B2D07 /* editEvents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

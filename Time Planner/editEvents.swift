@@ -1,16 +1,17 @@
 //
-//  newEventVC.swift
+//  editEvents.swift
 //  Time Planner
 //
-//  Created by sanjithsethu on 20/11/21.
+//  Created by sanjithsethu on 21/11/21.
 //
 
 import SwiftUI
 
-struct newEventVC: View {
+struct editEvents: View {
+    
     //  @Environment(\.presentationMode) var presentationMode
-    @Binding var evente: [Event]
-    @State var eventsss = Event(name: "",
+    @Binding var event: [Event]
+    @State var eventss = Event(name: "",
                               Location: "",
                               date: "",
                               time: "")
@@ -28,9 +29,15 @@ struct newEventVC: View {
         NavigationView {
             Form {
                 Section(header: Text("Information")) {
-                    TextField("Name", text: $eventsss.name).listRowSeparator(.visible)
+                    TextField("Name", text: $eventss.name).listRowSeparator(.visible)
                     
-                    TextField("Location", text: $eventsss.Location).listRowSeparator(.visible)
+             //       Spacer().listRowSeparator(.hidden)
+                    
+                    TextField("Location", text: $eventss.Location).listRowSeparator(.visible)
+                    
+                //Spacer()
+                    
+                 //   Text("Date and time:").listRowSeparator(.hidden)
                     
                     DatePicker(
                         "Date",
@@ -61,8 +68,8 @@ struct newEventVC: View {
     }
 }
 
-struct newEventVC_Previews: PreviewProvider {
+struct editEvents_Previews: PreviewProvider {
     static var previews: some View {
-        newEventVC(evente: .constant([]))
+        editEvents(event: .constant([]))
     }
 }

@@ -14,13 +14,17 @@
 		C5240259274A277D005B2D07 /* ActivitySets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5240258274A277D005B2D07 /* ActivitySets.swift */; };
 		C524025D274A2F6D005B2D07 /* TimeSpend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524025C274A2F6D005B2D07 /* TimeSpend.swift */; };
 		C524025F274A2FDB005B2D07 /* TimeSpentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524025E274A2FDB005B2D07 /* TimeSpentVC.swift */; };
-		C5240261274A6B72005B2D07 /* editEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5240260274A6B72005B2D07 /* editEvents.swift */; };
+		C5240261274A6B72005B2D07 /* editEventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5240260274A6B72005B2D07 /* editEventsVC.swift */; };
 		C524027D274A86B6005B2D07 /* ActivitySetsForEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524027C274A86B5005B2D07 /* ActivitySetsForEditVC.swift */; };
 		C5267CDA2746316200816DC1 /* Time_PlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5267CD92746316200816DC1 /* Time_PlannerApp.swift */; };
 		C5267CDC2746316200816DC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5267CDB2746316200816DC1 /* ContentView.swift */; };
 		C5267CDE2746316500816DC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5267CDD2746316500816DC1 /* Assets.xcassets */; };
 		C5267CE12746316500816DC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5267CE02746316500816DC1 /* Preview Assets.xcassets */; };
 		C53A5F5E2747575C008B9629 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A5F5D2747575C008B9629 /* Events.swift */; };
+		C5992FA7274A8CBB00D3402F /* ActiviesInSetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5992FA6274A8CBB00D3402F /* ActiviesInSetVC.swift */; };
+		C5992FA9274A950200D3402F /* newActivitySetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5992FA8274A950200D3402F /* newActivitySetVC.swift */; };
+		C5992FAB274A968900D3402F /* NewActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5992FAA274A968900D3402F /* NewActivityVC.swift */; };
+		C5992FAF274A9EC600D3402F /* EditActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5992FAE274A9EC600D3402F /* EditActivityVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +35,7 @@
 		C5240258274A277D005B2D07 /* ActivitySets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySets.swift; sourceTree = "<group>"; };
 		C524025C274A2F6D005B2D07 /* TimeSpend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSpend.swift; sourceTree = "<group>"; };
 		C524025E274A2FDB005B2D07 /* TimeSpentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSpentVC.swift; sourceTree = "<group>"; };
-		C5240260274A6B72005B2D07 /* editEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editEvents.swift; sourceTree = "<group>"; };
+		C5240260274A6B72005B2D07 /* editEventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editEventsVC.swift; sourceTree = "<group>"; };
 		C524027C274A86B5005B2D07 /* ActivitySetsForEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySetsForEditVC.swift; sourceTree = "<group>"; };
 		C5267CD62746316200816DC1 /* Time Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5267CD92746316200816DC1 /* Time_PlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_PlannerApp.swift; sourceTree = "<group>"; };
@@ -39,6 +43,10 @@
 		C5267CDD2746316500816DC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5267CE02746316500816DC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C53A5F5D2747575C008B9629 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		C5992FA6274A8CBB00D3402F /* ActiviesInSetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiviesInSetVC.swift; sourceTree = "<group>"; };
+		C5992FA8274A950200D3402F /* newActivitySetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newActivitySetVC.swift; sourceTree = "<group>"; };
+		C5992FAA274A968900D3402F /* NewActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityVC.swift; sourceTree = "<group>"; };
+		C5992FAE274A9EC600D3402F /* EditActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditActivityVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +82,15 @@
 				C5267CD92746316200816DC1 /* Time_PlannerApp.swift */,
 				C5267CDB2746316200816DC1 /* ContentView.swift */,
 				C524027C274A86B5005B2D07 /* ActivitySetsForEditVC.swift */,
-				C5240260274A6B72005B2D07 /* editEvents.swift */,
+				C5240260274A6B72005B2D07 /* editEventsVC.swift */,
 				C520532E274910B900F24D17 /* newEventVC.swift */,
 				C52053302749116000F24D17 /* startTimeVC.swift */,
 				C5240254274A24B9005B2D07 /* chooseActivitySetVC.swift */,
 				C524025E274A2FDB005B2D07 /* TimeSpentVC.swift */,
+				C5992FA6274A8CBB00D3402F /* ActiviesInSetVC.swift */,
+				C5992FA8274A950200D3402F /* newActivitySetVC.swift */,
+				C5992FAA274A968900D3402F /* NewActivityVC.swift */,
+				C5992FAE274A9EC600D3402F /* EditActivityVC.swift */,
 				C5240256274A2513005B2D07 /* activitiesInSet.swift */,
 				C524025C274A2F6D005B2D07 /* TimeSpend.swift */,
 				C5240258274A277D005B2D07 /* ActivitySets.swift */,
@@ -167,18 +179,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5992FA9274A950200D3402F /* newActivitySetVC.swift in Sources */,
 				C52053312749116100F24D17 /* startTimeVC.swift in Sources */,
 				C524025D274A2F6D005B2D07 /* TimeSpend.swift in Sources */,
 				C53A5F5E2747575C008B9629 /* Events.swift in Sources */,
 				C5267CDC2746316200816DC1 /* ContentView.swift in Sources */,
 				C524025F274A2FDB005B2D07 /* TimeSpentVC.swift in Sources */,
+				C5992FA7274A8CBB00D3402F /* ActiviesInSetVC.swift in Sources */,
+				C5992FAB274A968900D3402F /* NewActivityVC.swift in Sources */,
 				C5240255274A24B9005B2D07 /* chooseActivitySetVC.swift in Sources */,
 				C520532F274910B900F24D17 /* newEventVC.swift in Sources */,
 				C5240257274A2513005B2D07 /* activitiesInSet.swift in Sources */,
+				C5992FAF274A9EC600D3402F /* EditActivityVC.swift in Sources */,
 				C524027D274A86B6005B2D07 /* ActivitySetsForEditVC.swift in Sources */,
 				C5240259274A277D005B2D07 /* ActivitySets.swift in Sources */,
 				C5267CDA2746316200816DC1 /* Time_PlannerApp.swift in Sources */,
-				C5240261274A6B72005B2D07 /* editEvents.swift in Sources */,
+				C5240261274A6B72005B2D07 /* editEventsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

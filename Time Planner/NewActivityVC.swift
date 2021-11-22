@@ -41,15 +41,27 @@ struct NewActivity: View {
                 }
                 
                 Section {
-                    Button("Save") {
-                        //Actions
+                    HStack {
+                        Spacer()
+                        Button {
+                          //action
+                        } label: {
+                            Text("Save")
+                                .foregroundColor(.blue)
+                        }
+                        Spacer()
                     }
-                    .foregroundColor(.blue)
                     
-                    Button("Discard events") {
-                        //Actions
+                    HStack {
+                        Spacer()
+                        Button {
+                          //action
+                        } label: {
+                            Text("Delete")
+                                .foregroundColor(.red)
+                        }
+                        Spacer()
                     }
-                    .foregroundColor(.red)
                 }
             }
             .navigationTitle("New events")

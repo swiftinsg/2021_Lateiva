@@ -41,15 +41,27 @@ struct EditActivityVC: View {
                 }
                 
                 Section {
-                    Button("Save") {
-                        presentationMode.wrappedValue.dismiss()
+                    HStack {
+                        Spacer()
+                        Button {
+                          //action
+                        } label: {
+                            Text("Save")
+                                .foregroundColor(.blue)
+                        }
+                        Spacer()
                     }
-                    .foregroundColor(.blue)
                     
-                    Button("Discard events") {
-                        presentationMode.wrappedValue.dismiss()
+                    HStack {
+                        Spacer()
+                        Button {
+                          //action
+                        } label: {
+                            Text("Delete")
+                                .foregroundColor(.red)
+                        }
+                        Spacer()
                     }
-                    .foregroundColor(.red)
                 }
             }
             .navigationTitle("Edit events")

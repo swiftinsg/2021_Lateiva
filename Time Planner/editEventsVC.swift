@@ -53,18 +53,30 @@ struct editEvents: View {
                 }
                 
                 Section {
-                    Button("Save") {
-                        presentationMode.wrappedValue.dismiss()
+                    HStack {
+                        Spacer()
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            Text("Save")
+                                .foregroundColor(.blue)
+                        }
+                        Spacer()
                     }
-                    .foregroundColor(.blue)
                     
-                    Button("Discard events") {
-                        presentationMode.wrappedValue.dismiss()
+                    HStack {
+                        Spacer()
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            Text("Delete")
+                                .foregroundColor(.red)
+                        }
+                        Spacer()
                     }
-                    .foregroundColor(.red)
                 }
             }
-            .navigationTitle("New events")
+            .navigationTitle("Edit events")
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
         }
     }

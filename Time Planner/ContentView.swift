@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isSheetEnabled1 = false
+    //Commit working
     
     var events = [Event(name: "School", Location: "SST", date: "00/00/0000", time: "09:41am"),Event(name: "Swift Accelerator Programme", Location: "Tinkertanker", date: "01/00/0000", time: "09:41am"), Event(name: "SAP", Location: "Home", date: "01/00/0000", time: "09:41am"), Event(name: "Party", Location: "Jia Chen house", date: "01/00/0000", time: "09:41pm")]
     

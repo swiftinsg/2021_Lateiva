@@ -9,7 +9,7 @@ import SwiftUI
 
 struct editEvents: View {
     
-    //  @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentationMode
     @Binding var event: [Event]
     @State var eventss = Event(name: "",
                                Location: "",
@@ -54,12 +54,12 @@ struct editEvents: View {
                 
                 Section {
                     Button("Save") {
-                        //Actions
+                        presentationMode.wrappedValue.dismiss()
                     }
                     .foregroundColor(.blue)
                     
                     Button("Discard events") {
-                        //Actions
+                        presentationMode.wrappedValue.dismiss()
                     }
                     .foregroundColor(.red)
                 }

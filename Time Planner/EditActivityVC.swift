@@ -10,6 +10,7 @@ import SwiftUI
 struct EditActivityVC: View {
     @Binding var editActivity: [activitiesInSets]
     @State var EditActivities = activitiesInSets(name: "", minTime: "", maxTime: "", Priority: "")
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
@@ -41,12 +42,12 @@ struct EditActivityVC: View {
                 
                 Section {
                     Button("Save") {
-                        //Actions
+                        presentationMode.wrappedValue.dismiss()
                     }
                     .foregroundColor(.blue)
                     
                     Button("Discard events") {
-                        //Actions
+                        presentationMode.wrappedValue.dismiss()
                     }
                     .foregroundColor(.red)
                 }

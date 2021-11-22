@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isSheetEnabled1 = false
     
     var events = [Event(name: "School", Location: "SST", date: "00/00/0000", time: "09:41am"),Event(name: "Swift Accelerator Programme", Location: "Tinkertanker", date: "01/00/0000", time: "09:41am"), Event(name: "SAP", Location: "Home", date: "01/00/0000", time: "09:41am"), Event(name: "Party", Location: "Jia Chen house", date: "01/00/0000", time: "09:41pm")]
     
@@ -60,7 +61,7 @@ struct ContentView: View {
                                 .foregroundColor(Color(red: 0.6431372549019608, green: 0.6078431372549019, blue: 0.9568627450980393))
                             
                             Button {
-                                //action
+                               isSheetEnabled1 = true
                             } label: {
                                 Text("Edit")
                                     .foregroundColor(.white)
@@ -74,6 +75,9 @@ struct ContentView: View {
                     .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
+        }
+        .sheet(isPresented: $isSheetEnabled1){
+            editEvents(event: .constant([]))
         }
     }
 }

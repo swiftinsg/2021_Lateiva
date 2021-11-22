@@ -21,7 +21,7 @@ struct ActiviesInSet: View {
     
     var body: some View {
         VStack(alignment:.leading){
-            Text("Brushing") //Change to the actl name of the activity
+            Text("School") //Change to the actl name of the activity
                 .fontWeight(.heavy)
                 .foregroundColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))
                 .multilineTextAlignment(.leading)

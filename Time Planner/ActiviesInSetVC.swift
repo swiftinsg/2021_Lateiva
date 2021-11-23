@@ -9,24 +9,10 @@ import SwiftUI
 
 struct ActiviesInSetVC: View {
     
-    var activty = [Activites(name: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
-                   Activites(name: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
-                   Activites(name: "Wear Cloth", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
-                   Activites(name: "Pack", timeSpending: "10min", Percentage: "10%", Priority: "Medium Priority"),
-                   Activites(name: "Idk", timeSpending: "10min", Percentage: "10%", Priority: "Medium Priority"),
-                   Activites(name: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority"),
-                   Activites(name: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority"),
-                   Activites(name: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority"),
-                   Activites(name: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority")]
+    var activty: activitySets
     
     var body: some View {
         VStack(alignment:.leading){
-            Text("School") //Change to the actl name of the activity
-                .fontWeight(.heavy)
-                .foregroundColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))
-                .multilineTextAlignment(.leading)
-                .font(.system(size: 50))
-                .padding([.top, .leading, .trailing])
             HStack{
                 Button {
                     //action
@@ -46,9 +32,9 @@ struct ActiviesInSetVC: View {
                 }
             }.padding([.leading, .bottom, .trailing])
             
-            List(activty) { activty in
+            List(activty.activities) { activty in
                 VStack(alignment:.leading){
-                    Text(activty.name)
+                    Text(activty.name1 )
                         .font(.system(size: 20))
                         .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                         .fontWeight(.semibold)
@@ -62,7 +48,7 @@ struct ActiviesInSetVC: View {
     
     struct ActiviesInSet_Previews: PreviewProvider {
         static var previews: some View {
-            ActiviesInSetVC()
+            ActiviesInSetVC(activty: activitySets(name: "School", activities: [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"), Activites(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority")]))
         }
     }
 }

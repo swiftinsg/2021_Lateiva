@@ -10,7 +10,7 @@ import SwiftUI
 struct newActivitySetVC: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var ActiviteSet: [activitySets]
-    @State var ActivtysetNew = activitySets(name: "")
+    @State var ActivtysetNew = activitySets( name: "", activities: [Activites(name1: "", timeSpending: "", Percentage: "", Priority: "")])
     
     var body: some View {
         NavigationView {
@@ -24,6 +24,7 @@ struct newActivitySetVC: View {
                         Spacer()
                         Button {
                             presentationMode.wrappedValue.dismiss()
+                            ActiviteSet.append(ActivtysetNew)
                         } label: {
                             Text("Save")
                                 .foregroundColor(.blue)
@@ -46,7 +47,7 @@ struct newActivitySetVC: View {
                 }
 
             }
-            .navigationTitle("New events")
+            .navigationTitle("Activity Sets")
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
         }
     }

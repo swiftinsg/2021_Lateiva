@@ -10,4 +10,5 @@ import Foundation
 struct activitySets : Identifiable {
     var id = UUID()
     var name : String
+    var activities : [Activites]
 }

@@ -9,26 +9,27 @@ import SwiftUI
 
 struct TimeSpentVC: View {
     
-    var timings = [Activites(name: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
-                   Activites(name: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
-                   Activites(name: "Wear Cloth", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
-                   Activites(name: "Pack", timeSpending: "10min", Percentage: "10%", Priority: "Medium Priority"),
-                   Activites(name: "Idk", timeSpending: "10min", Percentage: "10%", Priority: "Medium Priority"),
-                   Activites(name: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority"),
-                   Activites(name: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority"),
-                   Activites(name: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority"),
-                   Activites(name: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority")]
+    init() {
+        //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))]
+        
+        //Use this if NavigationBarTitle is with displayMode = .inline
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
+    }
+    
+    var timings = [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
+                   Activites(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
+                   Activites(name1: "Wear Cloth", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
+                   Activites(name1: "Pack", timeSpending: "10min", Percentage: "10%", Priority: "Medium Priority"),
+                   Activites(name1: "Idk", timeSpending: "10min", Percentage: "10%", Priority: "Medium Priority"),
+                   Activites(name1: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority"),
+                   Activites(name1: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority"),
+                   Activites(name1: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority"),
+                   Activites(name1: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority")]
     var leaveHouse = Text("6:00am") //Add actual code here to calculate when to leave house
     
     var body: some View {
         VStack(alignment:.leading){
-            Text("What you need to do")
-                .fontWeight(.heavy)
-                .foregroundColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))
-                .multilineTextAlignment(.leading)
-                .font(.system(size: 35))
-                .padding(.all)
-            
             Text("Leave your house by 6:00am")
                 .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                 .font(.system(size: 18))
@@ -39,7 +40,7 @@ struct TimeSpentVC: View {
             List(timings) { timings in
                 VStack(alignment:.leading){
                     HStack {
-                        Text(timings.name)
+                        Text(timings.name1)
                             .font(.system(size: 20))
                             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                             .fontWeight(.bold)
@@ -75,7 +76,7 @@ struct TimeSpentVC: View {
                 .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
-        }
+        }.navigationBarTitle(Text("What you need to do"))
     }
 }
 

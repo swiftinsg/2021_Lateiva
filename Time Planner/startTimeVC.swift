@@ -29,7 +29,7 @@ struct startTimeVC: View {
     }()
     
     var body: some View {
-        NavigationView {
+     
             VStack(alignment:.leading){
                 //                Text("Hello,")
                 //                    .fontWeight(.heavy)
@@ -63,7 +63,7 @@ struct startTimeVC: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: TimeSpentVC()) {
+                NavigationLink(destination: chooseActivitySetVC()) {
                     ZStack{
                         RoundedRectangle(cornerRadius: 15)
                             .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
@@ -108,7 +108,7 @@ struct startTimeVC: View {
             }
             .navigationBarTitle(Text("Hello,"))
             
-        }
+        
         
         
     }

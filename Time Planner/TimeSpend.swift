@@ -9,7 +9,7 @@ import Foundation
 
 struct Activites : Identifiable {
     var id = UUID()
-    var name : String
+    var name1 : String
     var timeSpending : String
     var Percentage: String
     var Priority : String

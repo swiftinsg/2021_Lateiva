@@ -10,12 +10,12 @@ import SwiftUI
 struct startTimeVC: View {
     
     init() {
-            //Use this if NavigationBarTitle is with Large Font
+        //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))]
-
-            //Use this if NavigationBarTitle is with displayMode = .inline
+        
+        //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
-        }
+    }
     
     
     @State private var date = Date()
@@ -29,17 +29,15 @@ struct startTimeVC: View {
     }()
     
     var body: some View {
-        
-   
+        NavigationView {
             VStack(alignment:.leading){
-//                Text("Hello,")
-//                    .fontWeight(.heavy)
-//                    .foregroundColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))
-//                    .multilineTextAlignment(.leading)
- //                   .font(.system(size: 50))
- //                   .padding(.all)
-                Text("")
-                Text("")
+                //                Text("Hello,")
+                //                    .fontWeight(.heavy)
+                //                    .foregroundColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))
+                //                    .multilineTextAlignment(.leading)
+                //                   .font(.system(size: 50))
+                //                   .padding(.all)
+                
                 
                 Text("When would you like to start getting ready?")
                     .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
@@ -47,7 +45,11 @@ struct startTimeVC: View {
                     .lineLimit(3)
                     .padding(.horizontal)
                     .fixedSize(horizontal: false, vertical: true)
-                Spacer()
+                
+                Text("")
+                Text("")
+                Text("")
+                //    Text("")
                 
                 DatePicker(
                     "",
@@ -61,42 +63,52 @@ struct startTimeVC: View {
                 
                 Spacer()
                 
-                ZStack{
-                    RoundedRectangle(cornerRadius: 15)
-                        .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
-                        .foregroundColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9490196078431372))
-                    Button {
-                       
-                    } label: {
-                        Text("Continue")
-                            .foregroundColor(.blue)
+                NavigationLink(destination: TimeSpentVC()) {
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
+                            .foregroundColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9490196078431372))
+                        
+                        Text("Continue").foregroundColor(.blue)
                             .font(.system(size: 18))
                             .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
+                        
+                        /*
+                         Button {
+                         
+                         } label: {
+                         Text("Continue")
+                         .foregroundColor(.blue)
+                         .font(.system(size: 18))
+                         .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
+                         }
+                         
+                         */
                     }
-                    
-                    
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
-           /*
-                ZStack{
-                    RoundedRectangle(cornerRadius: 15)
-                        .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
-                        .foregroundColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9490196078431372))
-                    Button {
-                       
-                    } label: {
-                        Text("Cancel")
-                            .foregroundColor(.red)
-                            .font(.system(size: 18))
-                            .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
-                    }
-                }
-                .padding(.horizontal)
-                */
+                /*
+                 ZStack{
+                 RoundedRectangle(cornerRadius: 15)
+                 .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
+                 .foregroundColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9490196078431372))
+                 Button {
+                 
+                 } label: {
+                 Text("Cancel")
+                 .foregroundColor(.red)
+                 .font(.system(size: 18))
+                 .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
+                 }
+                 }
+                 .padding(.horizontal)
+                 */
                 
-               // Spacer()
+                // Spacer()
             }
             .navigationBarTitle(Text("Hello,"))
+            
+        }
         
         
     }

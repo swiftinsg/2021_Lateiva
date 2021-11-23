@@ -15,8 +15,6 @@ enum EditAction {
     
 }
 
-
-
 struct editEventsVC: View {
     
     @Environment(\.presentationMode) var presentationMode

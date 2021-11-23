@@ -82,7 +82,7 @@ struct ContentView: View {
                                         .foregroundColor(Color(red: 0.6431372549019608, green: 0.6078431372549019, blue: 0.9568627450980393))
                                     
                                     Button {
-                                      selectedEvent = event
+                                        selectedEvent = event
                                     } label: {
                                         Text("Edit")
                                             .foregroundColor(.white)
@@ -106,14 +106,13 @@ struct ContentView: View {
                 
                 
             }
-            .navigationBarTitle(Text("Today,"))
+            .navigationBarTitle(Text("Events"))
             .navigationBarItems(trailing: Button(action: {
                 isSheetEnabled2 = true
             }, label: {
                 Image(systemName: "plus")
             }))
-            .navigationBarItems(trailing:
-                                    NavigationLink(destination: ActivitySetsForEditVC()){
+            .navigationBarItems(trailing: NavigationLink(destination: ActivitySetsForEditVC()){
                 Text("Activities")
             })
         }
@@ -128,7 +127,7 @@ struct ContentView: View {
                     events[events.firstIndex(of: selectedEvent)!] = event
                 }
                 self.selectedEvent = nil
-                }
+            }
             
         }
         .sheet(isPresented: $isSheetEnabled2){

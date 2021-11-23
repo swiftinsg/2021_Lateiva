@@ -28,6 +28,7 @@ struct newActivitySetVC: View {
                             Text("Save")
                                 .foregroundColor(.blue)
                         }
+                        .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
                         Spacer()
                     }
                     
@@ -39,6 +40,7 @@ struct newActivitySetVC: View {
                             Text("Discard events")
                                 .foregroundColor(.red)
                         }
+                        .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
                         Spacer()
                     }
                 }

@@ -13,7 +13,7 @@ struct ContentView: View {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))]
 
             //Use this if NavigationBarTitle is with displayMode = .inline
-            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
         }
     @State var isSheetEnabled1 = false
     @State var isSheetEnabled2 = false
@@ -37,7 +37,7 @@ struct ContentView: View {
                     */
                     Text(" Tap on one of your events to continue")
                         .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                        .font(.system(size: 18))
+                        .font(.system(size: 14))
                         .padding([.leading, .trailing])
                    
                     
@@ -49,7 +49,7 @@ struct ContentView: View {
                             Spacer()
                             
                             Text(events.name)
-                                .font(.system(size: 35))
+                                .font(.system(size: 25))
                                 .foregroundColor(Color(hue: 0.78, saturation: 1.0, brightness: 0.722))
                                 .fontWeight(.heavy)
                             
@@ -58,14 +58,14 @@ struct ContentView: View {
                             Spacer()
                             
                             Text(events.Location)
-                                .font(.system(size: 20))
+                                .font(.system(size: 18))
                                 .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                             
                             Spacer()
                             
                             HStack{
                                 Text(events.time)
-                                    .font(.system(size: 20))
+                                    .font(.system(size: 18))
                                     .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                                 
                                 Spacer()
@@ -100,7 +100,7 @@ struct ContentView: View {
                 
                     
             }
-                .navigationBarTitle(Text("Today"))
+                .navigationBarTitle(Text("Today,"))
                 .navigationBarItems(trailing: Button(action: {
                     isSheetEnabled2 = true
                             }, label: {

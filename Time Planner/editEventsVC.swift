@@ -61,6 +61,7 @@ struct editEventsVC: View {
                             Text("Save")
                                 .foregroundColor(.blue)
                         }
+                        .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
                         Spacer()
                     }
                     
@@ -72,6 +73,7 @@ struct editEventsVC: View {
                             Text("Delete")
                                 .foregroundColor(.red)
                         }
+                        .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
                         Spacer()
                     }
                 }

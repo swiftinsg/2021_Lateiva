@@ -52,11 +52,30 @@ struct startTimeVC: View {
                 //    Text("")
                 
                 DatePicker(
-                    "",
+                    "Time:",
                     selection: $date,
                     in: dateRange,
-                    displayedComponents: [.date,.hourAndMinute]
-                ).datePickerStyle(GraphicalDatePickerStyle())
+                    displayedComponents: [.hourAndMinute]
+                ).datePickerStyle(WheelDatePickerStyle())
+                    .padding(.all)
+                    .font(.system(size: 13))
+                    .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+                
+                Text("When would you like to leave your house?")
+                    .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+                    .font(.system(size: 20))
+                    .lineLimit(3)
+                    .padding(.horizontal)
+                    .fixedSize(horizontal: false, vertical: true)
+                
+                Text("")
+                
+                DatePicker(
+                    "Time:",
+                    selection: $date,
+                    in: dateRange,
+                    displayedComponents: [.hourAndMinute]
+                ).datePickerStyle(WheelDatePickerStyle())
                     .padding(.all)
                     .font(.system(size: 13))
                     .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))

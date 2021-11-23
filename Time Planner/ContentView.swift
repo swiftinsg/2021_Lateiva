@@ -9,47 +9,53 @@ import SwiftUI
 
 struct ContentView: View {
     init() {
-            //Use this if NavigationBarTitle is with Large Font
+        //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))]
-
-            //Use this if NavigationBarTitle is with displayMode = .inline
+        
+        //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
-        }
-    @State var isSheetEnabled1 = false
+    }
+    @State var selectedEvent: Event? = nil
     @State var isSheetEnabled2 = false
+    @State var isSheetEnabled3 = false
+    //DateFormatter().string(from: Date())
     
     
-   @State var events = [Event(name: "School", Location: "SST", date: "01/00/0000", time: "09:41am"),Event(name: "Swift Accelerator Programme", Location: "Tinkertanker", date: "01/00/0000", time: "09:41am"), Event(name: "SAP", Location: "Home", date: "01/00/0000", time: "09:41am"), Event(name: "Party", Location: "Jia Chen house", date: "01/00/0000", time: "09:41pm")]
+    
+    @State var events = [Event(name: "School", Location: "SST", date: Date.now),Event(name: "Swift Accelerator Programme", Location: "Tinkertanker", date: Date.now), Event(name: "SAP", Location: "Home", date: Date.now), Event(name: "Party", Location: "Jia Chen house", date: Date.now)]
+    var filterevents: [Event] {
+        return events.filter {Calendar.current.isDateInToday($0.date)}
+    }
     
     var body: some View {
-     
+        
         NavigationView {
             VStack(alignment:.leading){
-                   /* Text("Today,")
-                        .fontWeight(.heavy)
-                        .foregroundColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))
-                        .multilineTextAlignment(.leading)
-                        .font(.system(size: 50))
-                        .padding([.top, .leading, .trailing])
-                    
-                    Text("")
-                    
-                    */
-                    Text(" Tap on one of your events to continue")
-                        .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                        .font(.system(size: 14))
-                        .padding([.leading, .trailing])
-                   
-                    
-                    List(events) { events in
-                        NavigationLink(destination: startTimeVC()) {
-
+                /* Text("Today,")
+                 .fontWeight(.heavy)
+                 .foregroundColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))
+                 .multilineTextAlignment(.leading)
+                 .font(.system(size: 50))
+                 .padding([.top, .leading, .trailing])
+                 
+                 Text("")
+                 
+                 */
+                Text(" Tap on one of your events to continue")
+                    .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+                    .font(.system(size: 14))
+                    .padding([.leading, .trailing])
+                
+                
+                List(filterevents) { event in
+                    NavigationLink(destination: startTimeVC()) {
+                        
                         VStack(alignment:.leading){
                             
                             Spacer()
                             
-                            Text(events.name)
-                                .font(.system(size: 25))
+                            Text(event.name)
+                                .font(.system(size: 24))
                                 .foregroundColor(Color(hue: 0.78, saturation: 1.0, brightness: 0.722))
                                 .fontWeight(.heavy)
                             
@@ -57,14 +63,14 @@ struct ContentView: View {
                             Spacer()
                             Spacer()
                             
-                            Text(events.Location)
+                            Text(event.Location)
                                 .font(.system(size: 18))
                                 .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                             
                             Spacer()
                             
                             HStack{
-                                Text(events.time)
+                                Text(dateformmtter(date: event.date))
                                     .font(.system(size: 18))
                                     .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                                 
@@ -76,7 +82,7 @@ struct ContentView: View {
                                         .foregroundColor(Color(red: 0.6431372549019608, green: 0.6078431372549019, blue: 0.9568627450980393))
                                     
                                     Button {
-                                       isSheetEnabled1 = true
+                                      selectedEvent = event
                                     } label: {
                                         Text("Edit")
                                             .foregroundColor(.white)
@@ -84,38 +90,62 @@ struct ContentView: View {
                                 }
                             }
                         }
-                            .background(Color(hue: 0.742, saturation: 0.149, brightness: 0.99))
-                            .cornerRadius(20)
-                            .padding(.vertical, 1)
-                            .listRowSeparator(.hidden)
-                        }.padding()
-                            .background(Color(hue: 0.742, saturation: 0.149, brightness: 0.99))
-                            .cornerRadius(20)
-                            .padding(.vertical, 1)
-                            .listRowSeparator(.hidden)
+                        .background(Color(hue: 0.742, saturation: 0.149, brightness: 0.99))
+                        .cornerRadius(20)
+                        .padding(.vertical, 1)
+                        .listRowSeparator(.hidden)
+                    }.padding()
+                        .background(Color(hue: 0.742, saturation: 0.149, brightness: 0.99))
+                        .cornerRadius(20)
+                        .padding(.vertical, 1)
+                        .listRowSeparator(.hidden)
                     
                 }
-                    .listStyle(.plain)
-                    .buttonStyle(.plain)
+                .listStyle(.plain)
+                .buttonStyle(.plain)
                 
-                    
+                
             }
-                .navigationBarTitle(Text("Today,"))
-                .navigationBarItems(trailing: Button(action: {
-                    isSheetEnabled2 = true
-                            }, label: {
-                                Image(systemName: "plus")
-                            }))
+            .navigationBarTitle(Text("Today,"))
+            .navigationBarItems(trailing: Button(action: {
+                isSheetEnabled2 = true
+            }, label: {
+                Image(systemName: "plus")
+            }))
+            .navigationBarItems(trailing:
+                                    NavigationLink(destination: ActivitySetsForEditVC()){
+                Text("Activities")
+            })
         }
-            .sheet(isPresented: $isSheetEnabled1){
-                editEventsVC(event: .constant([]))
+        .sheet(item: $selectedEvent){ selectedEvent in
+            editEventsVC(event: selectedEvent){editAction in
+                switch editAction {
+                case .cancel:
+                    break
+                case .delete:
+                    events.remove(at: events.firstIndex(of: selectedEvent)!)
+                case .save(let event):
+                    events[events.firstIndex(of: selectedEvent)!] = event
+                }
+                self.selectedEvent = nil
+                }
+            
         }
-            .sheet(isPresented: $isSheetEnabled2){
-                newEventVC(evente: $events)
+        .sheet(isPresented: $isSheetEnabled2){
+            newEventVC(evente: $events)
         }
-        }
+        
+    }
+    
+    func dateformmtter(date: Date) -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        return formatter.string(from: date)
+        
+    }
     
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

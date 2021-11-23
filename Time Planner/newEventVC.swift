@@ -19,9 +19,7 @@ struct newEventVC: View {
     @Binding var evente: [Event]
     @State var eventsss = Event(name: "",
                                 Location: "",
-                                date: "",
-                                time: "")
-    @State private var date = Date()
+                                date: Date.now)
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
         let startComponents = DateComponents(year: 2021, month: 1, day: 1)
@@ -41,7 +39,7 @@ struct newEventVC: View {
                     
                     DatePicker(
                         "Date",
-                        selection: $date,
+                        selection: $eventsss.date,
                         in: dateRange,
                         displayedComponents: [.date, .hourAndMinute]
                     )
@@ -71,7 +69,7 @@ struct newEventVC: View {
                         Button {
                             presentationMode.wrappedValue.dismiss()
                         } label: {
-                            Text("Discard events")
+                            Text("Cancel")
                                 .foregroundColor(.red)
                         }
                         .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)

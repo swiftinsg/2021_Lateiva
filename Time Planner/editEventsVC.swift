@@ -5,17 +5,24 @@
 //  Created by sanjithsethu on 21/11/21.
 //
 
+
 import SwiftUI
+
+enum EditAction {
+    case cancel
+    case delete
+    case save (Event)
+    
+}
+
+
 
 struct editEventsVC: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @Binding var event: [Event]
-    @State var eventss = Event(name: "",
-                               Location: "",
-                               date: "",
-                               time: "")
-    @State private var date = Date()
+    @State var event: Event
+    var dismiss : (EditAction) -> Void
+    
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
         let startComponents = DateComponents(year: 2021, month: 1, day: 1)
@@ -24,16 +31,20 @@ struct editEventsVC: View {
         ...
         calendar.date(from:endComponents)!
     }()
-    
+    init(event: Event, dismiss: @escaping (EditAction) -> Void) {
+        self.dismiss = dismiss
+        self._event = State(initialValue: event)
+        
+    }
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Information")) {
-                    TextField("Name", text: $eventss.name).listRowSeparator(.visible)
+                    TextField("Name", text: $event.name).listRowSeparator(.visible)
                     
                     //       Spacer().listRowSeparator(.hidden)
                     
-                    TextField("Location", text: $eventss.Location).listRowSeparator(.visible)
+                    TextField("Location", text: $event.Location).listRowSeparator(.visible)
                     
                     //Spacer()
                     
@@ -41,7 +52,7 @@ struct editEventsVC: View {
                     
                     DatePicker(
                         "Date",
-                        selection: $date,
+                        selection: $event.date,
                         in: dateRange,
                         displayedComponents: [.date, .hourAndMinute]
                     )
@@ -56,9 +67,10 @@ struct editEventsVC: View {
                     HStack {
                         Spacer()
                         Button {
-                            presentationMode.wrappedValue.dismiss()
+                            dismiss(.save(event))
                         } label: {
                             Text("Save")
+                            
                                 .foregroundColor(.blue)
                         }
                         .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
@@ -68,7 +80,7 @@ struct editEventsVC: View {
                     HStack {
                         Spacer()
                         Button {
-                            presentationMode.wrappedValue.dismiss()
+                            dismiss(.delete)
                         } label: {
                             Text("Delete")
                                 .foregroundColor(.red)
@@ -78,7 +90,7 @@ struct editEventsVC: View {
                     }
                 }
             }
-            .navigationTitle("New events")
+            .navigationTitle("Edit events")
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
         }
     }
@@ -86,6 +98,8 @@ struct editEventsVC: View {
 
 struct editEvents_Previews: PreviewProvider {
     static var previews: some View {
-        editEventsVC(event: .constant([]))
+        editEventsVC(event: Event(name: "School", Location: "SST", date: Date.now)) { _ in
+            
+        }
     }
 }

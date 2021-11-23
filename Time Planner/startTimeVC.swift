@@ -17,6 +17,7 @@ struct startTimeVC: View {
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
         }
     
+    
     @State private var date = Date()
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
@@ -29,7 +30,7 @@ struct startTimeVC: View {
     
     var body: some View {
         
-        NavigationView {
+   
             VStack(alignment:.leading){
 //                Text("Hello,")
 //                    .fontWeight(.heavy)
@@ -37,7 +38,8 @@ struct startTimeVC: View {
 //                    .multilineTextAlignment(.leading)
  //                   .font(.system(size: 50))
  //                   .padding(.all)
-                
+                Text("")
+                Text("")
                 
                 Text("When would you like to start getting ready?")
                     .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
@@ -45,8 +47,7 @@ struct startTimeVC: View {
                     .lineLimit(3)
                     .padding(.horizontal)
                     .fixedSize(horizontal: false, vertical: true)
-                
-           //     Spacer()
+                Spacer()
                 
                 DatePicker(
                     "",
@@ -67,7 +68,7 @@ struct startTimeVC: View {
                     Button {
                        
                     } label: {
-                        Text("Confirm")
+                        Text("Continue")
                             .foregroundColor(.blue)
                             .font(.system(size: 18))
                             .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
@@ -96,7 +97,7 @@ struct startTimeVC: View {
                // Spacer()
             }
             .navigationBarTitle(Text("Hello,"))
-        }
+        
         
     }
     

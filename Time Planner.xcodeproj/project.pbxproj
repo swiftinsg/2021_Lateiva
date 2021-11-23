@@ -81,9 +81,9 @@
 			children = (
 				C5267CD92746316200816DC1 /* Time_PlannerApp.swift */,
 				C5267CDB2746316200816DC1 /* ContentView.swift */,
+				C520532E274910B900F24D17 /* newEventVC.swift */,
 				C524027C274A86B5005B2D07 /* ActivitySetsForEditVC.swift */,
 				C5240260274A6B72005B2D07 /* editEventsVC.swift */,
-				C520532E274910B900F24D17 /* newEventVC.swift */,
 				C52053302749116000F24D17 /* startTimeVC.swift */,
 				C5240254274A24B9005B2D07 /* chooseActivitySetVC.swift */,
 				C524025E274A2FDB005B2D07 /* TimeSpentVC.swift */,

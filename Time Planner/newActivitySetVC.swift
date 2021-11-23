@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct newActivitySet: View {
-    
+struct newActivitySetVC: View {
+    @Environment(\.presentationMode) var presentationMode
     @Binding var ActiviteSet: [activitySets]
     @State var ActivtysetNew = activitySets(name: "")
     
@@ -23,7 +23,7 @@ struct newActivitySet: View {
                     HStack {
                         Spacer()
                         Button {
-                          //action
+                            presentationMode.wrappedValue.dismiss()
                         } label: {
                             Text("Save")
                                 .foregroundColor(.blue)
@@ -34,14 +34,15 @@ struct newActivitySet: View {
                     HStack {
                         Spacer()
                         Button {
-                          //action
+                            presentationMode.wrappedValue.dismiss()
                         } label: {
-                            Text("Delete")
+                            Text("Discard events")
                                 .foregroundColor(.red)
                         }
                         Spacer()
                     }
                 }
+
             }
             .navigationTitle("New events")
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
@@ -51,6 +52,6 @@ struct newActivitySet: View {
 
 struct newActivitySet_Previews: PreviewProvider {
     static var previews: some View {
-        newActivitySet(ActiviteSet: .constant([]))
+        newActivitySetVC(ActiviteSet: .constant([]))
     }
 }

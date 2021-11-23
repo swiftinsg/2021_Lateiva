@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct editEvents: View {
+struct editEventsVC: View {
     
     @Environment(\.presentationMode) var presentationMode
     @Binding var event: [Event]
@@ -76,7 +76,7 @@ struct editEvents: View {
                     }
                 }
             }
-            .navigationTitle("Edit events")
+            .navigationTitle("New events")
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
         }
     }
@@ -84,6 +84,6 @@ struct editEvents: View {
 
 struct editEvents_Previews: PreviewProvider {
     static var previews: some View {
-        editEvents(event: .constant([]))
+        editEventsVC(event: .constant([]))
     }
 }

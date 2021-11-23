@@ -58,7 +58,6 @@ struct startTimeVC: View {
                 Text("Confirm")
                     .foregroundColor(.blue)
                     .font(.system(size: 20))
-                    .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
                 
                 
             }
@@ -71,7 +70,6 @@ struct startTimeVC: View {
                 Text("Cancel")
                     .foregroundColor(.red)
                     .font(.system(size: 20))
-                    .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
             }
             .padding(.horizontal)
         }

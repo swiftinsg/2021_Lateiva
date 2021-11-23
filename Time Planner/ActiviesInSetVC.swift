@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ActiviesInSet: View {
+struct ActiviesInSetVC: View {
     
     var activty = [Activites(name: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
                    Activites(name: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
@@ -62,7 +62,7 @@ struct ActiviesInSet: View {
     
     struct ActiviesInSet_Previews: PreviewProvider {
         static var previews: some View {
-            ActiviesInSet()
+            ActiviesInSetVC()
         }
     }
 }

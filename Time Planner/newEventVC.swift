@@ -4,11 +4,18 @@
 //
 //  Created by sanjithsethu on 20/11/21.
 //
+/*
+ let today = Date()
+ let formatter1 = DateFormatter()
+ DateFormatter().dateStyle = .short
+ print(DateFormatter().string(from: Date()))
+ */
 
 import SwiftUI
 
 struct newEventVC: View {
-    //  @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentationMode
+    
     @Binding var evente: [Event]
     @State var eventsss = Event(name: "",
                                 Location: "",
@@ -49,7 +56,8 @@ struct newEventVC: View {
                     HStack {
                         Spacer()
                         Button {
-                          //action
+                            presentationMode.wrappedValue.dismiss()
+                            evente.append(eventsss)
                         } label: {
                             Text("Save")
                                 .foregroundColor(.blue)
@@ -60,9 +68,9 @@ struct newEventVC: View {
                     HStack {
                         Spacer()
                         Button {
-                          //action
+                            presentationMode.wrappedValue.dismiss()
                         } label: {
-                            Text("Delete")
+                            Text("Discard events")
                                 .foregroundColor(.red)
                         }
                         Spacer()

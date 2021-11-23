@@ -11,6 +11,6 @@ struct Event : Identifiable, Equatable, Codable {
     var id = UUID()
     var name : String
     var Location : String
-    var date: String
+    var date : String
     var time : String
 }

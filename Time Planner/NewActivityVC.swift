@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct NewActivity: View {
-    
+struct NewActivityVC: View {
+    @Environment(\.presentationMode) var presentationMode
     @Binding var newActivity: [activitiesInSets]
     @State var NewActivities = activitiesInSets(name: "", minTime: "", maxTime: "", Priority: "")
     
@@ -30,11 +30,11 @@ struct NewActivity: View {
                 Section(header: Text("Priority")) {
                     
                     Picker("Priority", selection: $NewActivities.Priority) {
-                        Text("Very High Priority")
-                        Text("High Priority")
-                        Text("Medium Priority")
-                        Text("Low Priority")
-                        Text("Very Low Priority")
+                        Text("5")
+                        Text("4")
+                        Text("3")
+                        Text("2")
+                        Text("1")
                     }
                     .pickerStyle(WheelPickerStyle())
                     
@@ -44,7 +44,7 @@ struct NewActivity: View {
                     HStack {
                         Spacer()
                         Button {
-                          //action
+                            presentationMode.wrappedValue.dismiss()
                         } label: {
                             Text("Save")
                                 .foregroundColor(.blue)
@@ -55,9 +55,9 @@ struct NewActivity: View {
                     HStack {
                         Spacer()
                         Button {
-                          //action
+                            presentationMode.wrappedValue.dismiss()
                         } label: {
-                            Text("Delete")
+                            Text("Discard events")
                                 .foregroundColor(.red)
                         }
                         Spacer()
@@ -72,6 +72,6 @@ struct NewActivity: View {
 
 struct NewActivity_Previews: PreviewProvider {
     static var previews: some View {
-        NewActivity(newActivity: .constant([]))
+        NewActivityVC(newActivity: .constant([]))
     }
 }

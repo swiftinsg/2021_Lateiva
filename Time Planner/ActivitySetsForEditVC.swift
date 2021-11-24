@@ -16,6 +16,7 @@ struct ActivitySetsForEditVC: View {
         
         //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
+        UITableView.appearance().backgroundColor = .clear
     }
     @State var isSheetEnabled4 = false
     @Binding var setsa: [activitySets]
@@ -41,8 +42,8 @@ struct ActivitySetsForEditVC: View {
                                 .fontWeight(.semibold)
                                 .padding(.vertical)
                         }
-                        .listRowBackground(Color(hue: 0.742, saturation: 0.044, brightness: 0.979))
                     }
+                    .listRowBackground(Color(hue: 0.742, saturation: 0.049, brightness: 0.984))
                     .sheet(isPresented: $isSheetEnabled4){
                         newActivitySetVC(ActiviteSet: $setsa)
                     }
@@ -51,7 +52,8 @@ struct ActivitySetsForEditVC: View {
                 }.onMove { source, destination in
                     setsa.move(fromOffsets: source, toOffset: destination)
                 }
-            }        .navigationBarTitle("Activities")
+            }
+            .navigationBarTitle("Activities")
                 .navigationBarItems(trailing: Button(action: {
                     isSheetEnabled4 = true
                 }, label: {

@@ -15,7 +15,10 @@ struct chooseActivitySetVC: View {
 
             //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
+        UITableView.appearance().backgroundColor = .clear
         }
+    
+    
     @Binding var set: [activitySets]
    
     
@@ -39,8 +42,8 @@ struct chooseActivitySetVC: View {
                         .fontWeight(.semibold)
                         .padding(.vertical)
                 }
-                .listRowBackground(Color(hue: 0.742, saturation: 0.044, brightness: 0.979))
-            }
+                
+                }.listRowBackground(Color(hue: 0.742, saturation: 0.049, brightness: 0.984))
         }
         }.navigationBarTitle("Activity Sets")
     

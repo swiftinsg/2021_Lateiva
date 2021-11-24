@@ -49,62 +49,73 @@ struct ContentView: View {
                     .padding([.leading, .trailing])
                 
                 
-                List(filterevents) { event in
-                    NavigationLink(destination: startTimeVC(setsa: $setsa)) {
-                        
-                        VStack(alignment:.leading){
+                List {
+                    ForEach(filterevents) { event in
+                        NavigationLink(destination: startTimeVC(setsa: $setsa)) {
                             
-                            Spacer()
-                            
-                            Text(event.name)
-                                .font(.system(size: 24))
-                                .foregroundColor(Color(hue: 0.78, saturation: 1.0, brightness: 0.722))
-                                .fontWeight(.heavy)
-                            
-                            Spacer()
-                            Spacer()
-                            Spacer()
-                            
-                            Text(event.Location)
-                                .font(.system(size: 18))
-                                .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                            
-                            Spacer()
-                            
-                            HStack{
-                                Text(dateformmtter(date: event.date))
+                            VStack(alignment:.leading){
+                                
+                                Spacer()
+                                
+                                Text(event.name)
+                                    .font(.system(size: 24))
+                                    .foregroundColor(Color(hue: 0.78, saturation: 1.0, brightness: 0.722))
+                                    .fontWeight(.heavy)
+                                
+                                Spacer()
+                                Spacer()
+                                Spacer()
+                                
+                                Text(event.Location)
                                     .font(.system(size: 18))
                                     .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                                 
                                 Spacer()
                                 
-                                ZStack{
-                                    RoundedRectangle(cornerRadius: 15)
-                                        . frame(width: 100, height:50)
-                                        .foregroundColor(Color(red: 0.6431372549019608, green: 0.6078431372549019, blue: 0.9568627450980393))
+                                HStack{
+                                    Text(dateformmtter(date: event.date))
+                                        .font(.system(size: 18))
+                                        .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                                     
-                                    Button {
-                                        selectedEvent = event
-                                    } label: {
-                                        Text("Edit")
-                                            .foregroundColor(.white)
-                                    }.frame(width: 100, height:50)
+                                    Spacer()
+                                    
+                                    ZStack{
+                                        RoundedRectangle(cornerRadius: 15)
+                                            . frame(width: 100, height:50)
+                                            .foregroundColor(Color(red: 0.6431372549019608, green: 0.6078431372549019, blue: 0.9568627450980393))
+                                        
+                                        Button {
+                                            selectedEvent = event
+                                        } label: {
+                                            Text("Edit")
+                                                .foregroundColor(.white)
+                                        }.frame(width: 100, height:50)
+                                    }
                                 }
                             }
-                        }
-                        .background(Color(hue: 0.742, saturation: 0.149, brightness: 0.99))
-                        .cornerRadius(20)
-                        .padding(.vertical, 1)
-                        .listRowSeparator(.hidden)
-                    }.padding()
-                        .background(Color(hue: 0.742, saturation: 0.149, brightness: 0.99))
-                        .cornerRadius(20)
-                        .padding(.vertical, 1)
-                        .listRowSeparator(.hidden)
-                    
+                            .background(Color(hue: 0.742, saturation: 0.149, brightness: 0.99))
+                            .cornerRadius(20)
+                            .padding(.vertical, 1)
+                            .listRowSeparator(.hidden)
+                            
+                            
+                        }.padding()
+                            .background(Color(hue: 0.742, saturation: 0.149, brightness: 0.99))
+                            .cornerRadius(20)
+                            .padding(.vertical, 1)
+                            .listRowSeparator(.hidden)
+                            
+                        
+                    }
+                    .onDelete { offsets in
+                        events.remove(atOffsets: offsets)
+                    }.onMove { source, destination in
+                        events.move(fromOffsets: source, toOffset: destination)
+                    }
                 }
                 .listStyle(.plain)
                 .buttonStyle(.plain)
+                
                 
                 
             }

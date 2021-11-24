@@ -37,8 +37,8 @@ struct NewActivityVC: View {
                         Text("1")
                     }
                     .pickerStyle(WheelPickerStyle())
+                        }
                     
-                }
                 
                 Section {
                     HStack {

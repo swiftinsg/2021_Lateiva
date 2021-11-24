@@ -9,14 +9,15 @@ import SwiftUI
 
 struct startTimeVC: View {
     
-    init() {
+    init(setsa: Binding<[activitySets]>) {
+        self._setsa = setsa
         //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))]
         
         //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
     }
-    
+    @Binding var setsa: [activitySets]
     
     @State private var date = Date()
     let dateRange: ClosedRange<Date> = {
@@ -82,7 +83,7 @@ struct startTimeVC: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: chooseActivitySetVC()) {
+                NavigationLink(destination: chooseActivitySetVC(setsa: $setsa)) {
                     ZStack{
                         RoundedRectangle(cornerRadius: 15)
                             .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
@@ -134,7 +135,7 @@ struct startTimeVC: View {
     
     struct startTimeVC_Previews: PreviewProvider {
         static var previews: some View {
-            startTimeVC()
+            startTimeVC(setsa: .constant([]))
         }
     }
 }

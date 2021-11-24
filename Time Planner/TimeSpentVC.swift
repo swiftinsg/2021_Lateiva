@@ -9,23 +9,19 @@ import SwiftUI
 
 struct TimeSpentVC: View {
     
-    init() {
-        //Use this if NavigationBarTitle is with Large Font
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))]
-        
-        //Use this if NavigationBarTitle is with displayMode = .inline
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
-    }
     
-    var timings = [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
+    var set: activitySets
+    
+    /*var timings = [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
                    Activites(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
                    Activites(name1: "Wear Cloth", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
                    Activites(name1: "Pack", timeSpending: "10min", Percentage: "10%", Priority: "Medium Priority"),
                    Activites(name1: "Idk", timeSpending: "10min", Percentage: "10%", Priority: "Medium Priority"),
                    Activites(name1: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority"),
                    Activites(name1: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority"),
-                   Activites(name1: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority"),
+                   Activites(name1: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority")
                    Activites(name1: "some other", timeSpending: "5min", Percentage: "5%", Priority: "Low Priority")]
+    */
     var leaveHouse = Text("6:00am") //Add actual code here to calculate when to leave house
     
     var body: some View {
@@ -37,7 +33,7 @@ struct TimeSpentVC: View {
                 .padding(.horizontal)
                 .fixedSize(horizontal: false, vertical: true)
             
-            List(timings) { timings in
+            List(set.activities) { timings in
                 VStack(alignment:.leading){
                     HStack {
                         Text(timings.name1)
@@ -77,11 +73,13 @@ struct TimeSpentVC: View {
             }
             .listStyle(.plain)
         }.navigationBarTitle(Text("What you need to do"))
+        .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+
     }
 }
 
 struct TimeSpentVC_Previews: PreviewProvider {
     static var previews: some View {
-        TimeSpentVC()
+        TimeSpentVC(set: activitySets(name: "School", activities: [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"), Activites(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority")]))
     }
 }

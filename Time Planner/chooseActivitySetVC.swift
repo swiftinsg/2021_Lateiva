@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct chooseActivitySetVC: View {
-    init() {
+    init(setsa: Binding<[activitySets]>) {
+        self._set = setsa
             //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))]
 
             //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
         }
-    
-    var set = [activitySets(name: "School", activities: [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"), Activites(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority")]), activitySets(name: "Work", activities: [Activites(name1: "Dressing up", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"), Activites(name1: "Pack Bag", timeSpending: "15min", Percentage: "20%", Priority: "High Priority")])]
+    @Binding var set: [activitySets]
+   
     
     var body: some View {
         VStack(alignment:.leading){
@@ -30,7 +31,7 @@ struct chooseActivitySetVC: View {
                 .fixedSize(horizontal: false, vertical: true)
             
             List(set) { set in
-                NavigationLink(destination: TimeSpentVC()) {
+                NavigationLink(destination: TimeSpentVC(set: set)) {
                 VStack(alignment:.leading){
                     Text(set.name)
                         .font(.system(size: 20))
@@ -49,7 +50,7 @@ struct chooseActivitySetVC: View {
 
 struct chooseActivitySetVC_Previews: PreviewProvider {
     static var previews: some View {
-        chooseActivitySetVC()
+        chooseActivitySetVC(setsa: .constant([]))
     }
 }
 

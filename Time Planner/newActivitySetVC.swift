@@ -25,6 +25,7 @@ struct newActivitySetVC: View {
                         Button {
                             presentationMode.wrappedValue.dismiss()
                             ActiviteSet.append(ActivtysetNew)
+                            
                         } label: {
                             Text("Save")
                                 .foregroundColor(.blue)

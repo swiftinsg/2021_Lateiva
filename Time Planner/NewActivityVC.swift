@@ -9,37 +9,41 @@ import SwiftUI
 
 struct NewActivityVC: View {
     @Environment(\.presentationMode) var presentationMode
-    @Binding var newActivity: [Activites]
-    @State var NewActivities = Activites(name1: "", timeSpending: "", Percentage: "", Priority: "", minTime: 0 , maxTime: 0 )
+    @Binding var newActivity: [activitySets]
+    @State var NewActivities = activitySets(name: "", activities: [Activites(name1: "", timeSpending: "", Percentage: "", Priority: "", minTime: 0 , maxTime: 0)] )
     
     var body: some View {
         NavigationView {
             
             Form {
                 Section(header: Text("Name")) {
-                    TextField("Name", text: $NewActivities.name1).listRowSeparator(.visible)
-                }
+                    ForEach($NewActivities.activities, id: \.id) { event in
+
+                        TextField("Name", text: event.name1).listRowSeparator(.visible)
+                    }
+                    }
                 Section(header: Text("Time")) {
-                    
-                    Slider(value: $NewActivities.minTime,
+                    ForEach($NewActivities.activities, id: \.id) { event in
+                        Slider(value: event.minTime,
                                                   in: 0...120,
                                                   step: 1)
-                    Slider(value: $NewActivities.minTime,
+                        Slider(value: event.maxTime,
                                                   in: 0...120,
                                                   step: 1)
                     
-                
+                    }
                     
                 }
                 
                 Section(header: Text("Priority")) {
-                    
-                    Picker("Priority", selection: $NewActivities.Priority) {
+                    ForEach($NewActivities.activities, id: \.id) { event in
+                    Picker("Priority", selection: event.Priority) {
                         Text("5")
                         Text("4")
                         Text("3")
                         Text("2")
                         Text("1")
+                    }
                     }
                     .pickerStyle(WheelPickerStyle())
                         }

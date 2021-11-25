@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ActiviesInSetVC: View {
     
-    var activty: activitySets
-    @State var activty2: activitySets
+    @State var activty: [activitySets]
     @State var setsa1 = [activitySets(name: "School", activities: [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activites(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]), activitySets(name: "Work", activities: [Activites(name1: "Dressing up", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]) ]
     @State var isSheetEnabled5 = false
     @State var isSheetEnabled6 = false
@@ -42,7 +41,7 @@ struct ActiviesInSetVC: View {
          
          */
 
-        List(activty.activities) { activty in
+        List($activty.activities) { activty in
             VStack(alignment:.leading){
                 Text(activty.name1 )
                     .font(.system(size: 20))
@@ -97,7 +96,7 @@ struct ActiviesInSetVC: View {
             }
         }
         .sheet(isPresented: $isSheetEnabled6){
-           NewActivityVC(newActivity: activty)
+           NewActivityVC(newActivity: $activty)
        }
   //      .sheet(isPresented: $isSheetEnabled6){
    //         NewActivityVC(newActivity: [])

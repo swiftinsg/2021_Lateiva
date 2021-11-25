@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct activitySets : Identifiable {
+struct activitySets : Identifiable, Equatable {
     var id = UUID()
     var name : String
     var activities : [Activites]

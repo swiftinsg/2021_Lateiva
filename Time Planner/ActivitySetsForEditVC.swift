@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct ActivitySetsForEditVC: View {
+    /*
     init(setsa: Binding<[activitySets]>) {
         self._setsa = setsa
         //Use this if NavigationBarTitle is with Large Font
@@ -18,6 +19,7 @@ struct ActivitySetsForEditVC: View {
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
         UITableView.appearance().backgroundColor = .clear
     }
+ */
     @State var isSheetEnabled4 = false
     @Binding var setsa: [activitySets]
     
@@ -34,7 +36,7 @@ struct ActivitySetsForEditVC: View {
             List{
                 ForEach(setsa) { setsa in
                     
-                    NavigationLink(destination: ActiviesInSetVC(activty: setsa, activty2: setsa)) {
+                    NavigationLink(destination: ActiviesInSetVC(activty: setsa)) {
                         VStack(alignment:.leading){
                             Text(setsa.name)
                                 .font(.system(size: 20))
@@ -54,6 +56,7 @@ struct ActivitySetsForEditVC: View {
                 }
             }
             .navigationBarTitle("Activities")
+            .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                 .navigationBarItems(trailing: Button(action: {
                     isSheetEnabled4 = true
                 }, label: {

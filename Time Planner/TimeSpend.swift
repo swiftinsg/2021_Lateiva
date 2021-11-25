@@ -13,4 +13,8 @@ struct Activites : Identifiable {
     var timeSpending : String
     var Percentage: String
     var Priority : String
+    var minTime : Double
+    var maxTime: Double
 }
+
+

@@ -80,6 +80,6 @@ struct TimeSpentVC: View {
 
 struct TimeSpentVC_Previews: PreviewProvider {
     static var previews: some View {
-        TimeSpentVC(set: activitySets(name: "School", activities: [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"), Activites(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority")]))
+        TimeSpentVC(set: activitySets(name: "School", activities: [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activites(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]))
     }
 }

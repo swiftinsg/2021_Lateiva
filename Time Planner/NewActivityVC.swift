@@ -9,21 +9,26 @@ import SwiftUI
 
 struct NewActivityVC: View {
     @Environment(\.presentationMode) var presentationMode
-    @Binding var newActivity: [activitiesInSets]
-    @State var NewActivities = activitiesInSets(name: "", minTime: "", maxTime: "", Priority: "")
+    @Binding var newActivity: [Activites]
+    @State var NewActivities = Activites(name1: "", timeSpending: "", Percentage: "", Priority: "", minTime: 0 , maxTime: 0 )
     
     var body: some View {
         NavigationView {
             
             Form {
                 Section(header: Text("Name")) {
-                    TextField("Name", text: $NewActivities.name).listRowSeparator(.visible)
+                    TextField("Name", text: $NewActivities.name1).listRowSeparator(.visible)
                 }
                 Section(header: Text("Time")) {
                     
-                    TextField("Min Time you will spend", text: $NewActivities.minTime).listRowSeparator(.visible)
+                    Slider(value: $NewActivities.minTime,
+                                                  in: 0...120,
+                                                  step: 1)
+                    Slider(value: $NewActivities.minTime,
+                                                  in: 0...120,
+                                                  step: 1)
                     
-                    TextField("Max Time you will spend", text: $NewActivities.maxTime).listRowSeparator(.visible)
+                
                     
                 }
                 

@@ -7,23 +7,43 @@
 
 import SwiftUI
 
+enum EditAction1 {
+        case cancel
+        case delete
+        case save (Activites)
+        
+    }
+
 struct EditActivityVC: View {
-    @Binding var editActivity: [activitiesInSets]
-    @State var EditActivities = activitiesInSets(name: "", minTime: "", maxTime: "", Priority: "")
+  //  @Binding var editActivity: [Activites]
+    @State var EditActivities: Activites
     @Environment(\.presentationMode) var presentationMode
+    
+    var dismiss : (EditAction1) -> Void
+    
+    init(event: Activites, dismiss: @escaping (EditAction1) -> Void) {
+        self.dismiss = dismiss
+        self._EditActivities = State(initialValue: event)
+        
+    }
     
     var body: some View {
         NavigationView {
             
             Form {
                 Section(header: Text("Name")) {
-                    TextField("Name", text: $EditActivities.name).listRowSeparator(.visible)
+                    TextField("Name", text: $EditActivities.name1).listRowSeparator(.visible)
                 }
                 Section(header: Text("Time")) {
                     
-                    TextField("Min Time you will spend", text: $EditActivities.minTime).listRowSeparator(.visible)
+                    Slider(value: $EditActivities.minTime,
+                                                  in: 0...120,
+                                                  step: 1)
+                    Slider(value: $EditActivities.minTime,
+                                                  in: 0...120,
+                                                  step: 1)
                     
-                    TextField("Max Time you will spend", text: $EditActivities.maxTime).listRowSeparator(.visible)
+                
                     
                 }
                 
@@ -44,7 +64,7 @@ struct EditActivityVC: View {
                     HStack {
                         Spacer()
                         Button {
-                            presentationMode.wrappedValue.dismiss()
+                            dismiss(.save(EditActivities))
                         } label: {
                             Text("Save")
                                 .foregroundColor(.blue)
@@ -55,7 +75,7 @@ struct EditActivityVC: View {
                     HStack {
                         Spacer()
                         Button {
-                            presentationMode.wrappedValue.dismiss()
+                            dismiss(.delete)
                         } label: {
                             Text("Discard events")
                                 .foregroundColor(.red)
@@ -73,6 +93,8 @@ struct EditActivityVC: View {
 
 struct EditActivityVC_Previews: PreviewProvider {
     static var previews: some View {
-        EditActivityVC(editActivity: .constant([]))
+        EditActivityVC(event:Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)) { _ in
+            
+        }
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct newActivitySetVC: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var ActiviteSet: [activitySets]
-    @State var ActivtysetNew = activitySets( name: "", activities: [Activites(name1: "", timeSpending: "", Percentage: "", Priority: "")])
+    @State var ActivtysetNew = activitySets( name: "", activities: [Activites(name1: "", timeSpending: "", Percentage: "", Priority: "", minTime: 0, maxTime: 0)])
     
     var body: some View {
         NavigationView {

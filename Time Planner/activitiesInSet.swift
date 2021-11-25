@@ -4,7 +4,7 @@
 //
 //  Created by sanjithsethu on 21/11/21.
 //
-
+/*
 import Foundation
 
 struct activitiesInSets : Identifiable {
@@ -14,4 +14,5 @@ struct activitiesInSets : Identifiable {
     var maxTime: String
     var Priority : String
 }
+ */
 

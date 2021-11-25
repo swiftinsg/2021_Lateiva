@@ -10,7 +10,11 @@ import SwiftUI
 struct ActiviesInSetVC: View {
     
     var activty: activitySets
+    @State var activty2: activitySets
+    @State var setsa1 = [activitySets(name: "School", activities: [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activites(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]), activitySets(name: "Work", activities: [Activites(name1: "Dressing up", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]) ]
     @State var isSheetEnabled5 = false
+    @State var isSheetEnabled6 = false
+    @State var selectedEvent1: Activites? = nil
     
     
     var body: some View {
@@ -72,16 +76,39 @@ struct ActiviesInSetVC: View {
             }
             .listRowBackground(Color(hue: 0.742, saturation: 0.044, brightness: 0.979))
             
-        }//.sheet(isPresented: $isSheetEnabled5){
-        //    EditActivityVC(editActivity: [])
-     //   }
+        }
+        .navigationBarTitle(Text("Activities"))
+        .navigationBarItems(trailing: Button(action: {
+            isSheetEnabled6 = true
+        }, label: {
+            Image(systemName: "plus")
+        }))
+        .sheet(item: $selectedEvent1){ selectedEvent in
+            EditActivityVC(event: selectedEvent){editAction in
+                switch editAction {
+                case .cancel:
+                    break
+                case .delete:
+                    activty.activities.remove(at: activty.activities.firstIndex(of: selectedEvent1!)!)
+                case .save(let event):
+                    activty[activty.firstIndex(of: selectedEvent1!)!] = event
+                }
+                self.selectedEvent1 = nil
+            }
+        }
+        .sheet(isPresented: $isSheetEnabled6){
+           NewActivityVC(newActivity: activty)
+       }
+  //      .sheet(isPresented: $isSheetEnabled6){
+   //         NewActivityVC(newActivity: [])
+        //}
         
         
     }
     
     struct ActiviesInSet_Previews: PreviewProvider {
         static var previews: some View {
-            ActiviesInSetVC(activty: activitySets(name: "School", activities: [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"), Activites(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority")]))
+            ActiviesInSetVC(activty: activitySets(name: "School", activities: [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activites(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]))
         }
     }
 }

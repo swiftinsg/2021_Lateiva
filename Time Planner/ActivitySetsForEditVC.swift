@@ -34,7 +34,7 @@ struct ActivitySetsForEditVC: View {
             List{
                 ForEach(setsa) { setsa in
                     
-                    NavigationLink(destination: ActiviesInSetVC(activty: setsa)) {
+                    NavigationLink(destination: ActiviesInSetVC(activty: setsa, activty2: setsa)) {
                         VStack(alignment:.leading){
                             Text(setsa.name)
                                 .font(.system(size: 20))

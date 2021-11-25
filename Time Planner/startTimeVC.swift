@@ -6,8 +6,17 @@
 //
 
 import SwiftUI
+let fmt = ISO8601DateFormatter()
+
+let date1 = fmt.date(from: "2017-08-06T19:20:42+0000")!
+let date2 = fmt.date(from: "2020-08-06T19:20:46+0000")!
+
+let diffs = Calendar.current.dateComponents([.year, .month, .day], from: date1, to: date2)
+//print(diffs)
 
 struct startTimeVC: View {
+    
+    
     
     init(setsa: Binding<[activitySets]>) {
         self._setsa = setsa
@@ -20,6 +29,8 @@ struct startTimeVC: View {
     @Binding var setsa: [activitySets]
     
     @State private var date = Date()
+    @State private var date1 = Date()
+
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
         let startComponents = DateComponents(year: 2021, month: 1, day: 1)
@@ -73,7 +84,7 @@ struct startTimeVC: View {
                 
                 DatePicker(
                     "",
-                    selection: $date,
+                    selection: $date1,
                     in: dateRange,
                     displayedComponents: [.hourAndMinute]
                 ).datePickerStyle(WheelDatePickerStyle())

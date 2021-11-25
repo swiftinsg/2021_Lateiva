@@ -74,14 +74,14 @@ struct startTimeVC: View {
                     .font(.system(size: 13))
                     .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                     .frame(minWidth: 60, maxWidth: .infinity, minHeight: 130, maxHeight: 150)
-                
+                Spacer()
+
                 Text("When would you like to leave your house?")
                     .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                     .font(.system(size: 20))
                     .lineLimit(3)
                     .padding(.all)
                     .fixedSize(horizontal: false, vertical: true)
-                
                 DatePicker(
                     "",
                     selection: $date1,

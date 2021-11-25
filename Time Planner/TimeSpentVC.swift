@@ -11,6 +11,7 @@ struct TimeSpentVC: View {
     
     
     var set: ActivitySets
+  //  @Binding var ser: [ActivitySets]
     
     /*var timings = [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),
                    Activites(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority"),

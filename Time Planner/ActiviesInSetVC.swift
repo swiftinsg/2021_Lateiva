@@ -67,7 +67,7 @@ struct ActiviesInSetVC: View {
                             .foregroundColor(Color(red: 0.6431372549019608, green: 0.6078431372549019, blue: 0.9568627450980393))
                         
                         Button {
-                          isSheetEnabled5 = true
+                            selectedEvent1 = activity
                         } label: {
                             Text("Edit")
                                 .foregroundColor(.white)
@@ -77,31 +77,22 @@ struct ActiviesInSetVC: View {
             }
             .listRowBackground(Color(hue: 0.742, saturation: 0.044, brightness: 0.979))
             }
+        .buttonStyle(.plain)
         .navigationBarTitle(Text("Activities"))
         .navigationBarItems(trailing: Button(action: {
             isSheetEnabled6 = true
             }) {
             Image(systemName: "plus")
         })
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        .sheet(item: $selectedEvent1){ selectedEvent in
-            EditActivityVC(event: selectedEvent){editAction in
+        .sheet(item: $selectedEvent1){ selectedEvent1 in
+            EditActivityVC(event: selectedEvent1){editAction in
                 switch editAction {
                 case .cancel:
                     break
                 case .delete:
 
                     for (index, activity) in singleActivitySet.activities.enumerated() {
-                        if activity.id == selectedEvent.id {
+                        if activity.id == selectedEvent1.id {
                             singleActivitySet.activities.remove(at: index)
                             for (index, activity) in setsa.enumerated() {
                                 if activity.id == singleActivitySet.id {
@@ -112,7 +103,14 @@ struct ActiviesInSetVC: View {
                     }
                     //activty.activities.remove(at: activty.activities.firstIndex(of: selectedEvent1!)!)
                 case .save(let event):
-                    singleActivitySet.activities.append(event)
+                    print(event)
+                    for (index, activity) in singleActivitySet.activities.enumerated(){
+                        if activity.id == event.id {
+                            singleActivitySet.activities[index] = event
+                            print(singleActivitySet.activities)
+                            
+                        }
+                    }
                     for (index, activity) in setsa.enumerated() {
                         if activity.id == singleActivitySet.id {
                             setsa[index] = singleActivitySet

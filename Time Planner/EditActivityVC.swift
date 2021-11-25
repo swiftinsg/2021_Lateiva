@@ -37,10 +37,10 @@ struct EditActivityVC: View {
                 Section(header: Text("Time")) {
                     
                     Slider(value: $EditActivities.minTime,
-                                                  in: 0...120,
+                                                  in: 0...60,
                                                   step: 1)
-                    Slider(value: $EditActivities.minTime,
-                                                  in: 0...120,
+                    Slider(value: $EditActivities.maxTime,
+                                                  in: 0...60,
                                                   step: 1)
                     
                 
@@ -56,7 +56,7 @@ struct EditActivityVC: View {
                         Text("Low Priority").tag("Low Priority")
                         Text("Very Low Priority").tag("Very Low Priority")
                     }
-                    .pickerStyle(WheelPickerStyle())
+              
                     
                 }
                 
@@ -76,6 +76,9 @@ struct EditActivityVC: View {
                         Spacer()
                         Button {
                             dismiss(.delete)
+                            presentationMode.wrappedValue.dismiss()
+
+                            
                         } label: {
                             Text("Discard events")
                                 .foregroundColor(.red)

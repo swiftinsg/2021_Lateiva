@@ -44,7 +44,6 @@ struct NewActivityVC: View {
                         Text("Low Priority").tag("Low Priority")
                         Text("Very Low Priority").tag("Very Low Priority")
                     }
-                    .pickerStyle(WheelPickerStyle())
                         }
                     
                 

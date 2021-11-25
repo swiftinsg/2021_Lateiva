@@ -61,7 +61,7 @@ struct ActivitySetsForEditVC: View {
                 }, label: {
                     Image(systemName: "plus")
                 }))
-                .navigationBarItems(trailing: EditButton())
+            .navigationBarItems(trailing: EditButton())
         }
     }
 }

@@ -125,9 +125,10 @@ struct ContentView: View {
             }, label: {
                 Image(systemName: "plus")
             }))
-            .navigationBarItems(trailing: NavigationLink(destination: ActivitySetsForEditVC(setsa: $setsa)){
+            .navigationBarItems(leading: NavigationLink(destination: ActivitySetsForEditVC(setsa: $setsa)){
                 Text("Activities")
             })
+            .navigationBarItems(trailing: EditButton())
         }
         .sheet(item: $selectedEvent){ selectedEvent in
             editEventsVC(event: selectedEvent){editAction in

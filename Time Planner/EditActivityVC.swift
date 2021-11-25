@@ -75,12 +75,12 @@ struct EditActivityVC: View {
                     HStack {
                         Spacer()
                         Button {
-                            dismiss(.delete)
+                            dismiss(.cancel)
                             presentationMode.wrappedValue.dismiss()
 
                             
                         } label: {
-                            Text("Discard events")
+                            Text("Discard Changes")
                                 .foregroundColor(.red)
                         }
                         Spacer()

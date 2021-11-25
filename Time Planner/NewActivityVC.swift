@@ -66,7 +66,7 @@ struct NewActivityVC: View {
                         Button {
                             presentationMode.wrappedValue.dismiss()
                         } label: {
-                            Text("Discard events")
+                            Text("Cancel")
                                 .foregroundColor(.red)
                         }
                         Spacer()

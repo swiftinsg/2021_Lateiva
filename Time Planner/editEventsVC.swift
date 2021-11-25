@@ -63,24 +63,24 @@ struct editEventsVC: View {
                 
                 Section {
                     HStack {
-                        Spacer()
-                        Button {
-                            dismiss(.save(event))
-                        } label: {
-                            Text("Save")
-                            
-                                .foregroundColor(.blue)
-                        }
-                        .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
-                        Spacer()
+                            Spacer()
+                            Button {
+                                dismiss(.save(event))
+                            } label: {
+                                Text("Save")
+                                
+                                    .foregroundColor(.blue)
+                            }
+                            .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
+                            Spacer()
                     }
                     
                     HStack {
                         Spacer()
                         Button {
-                            dismiss(.delete)
+                            dismiss(.cancel)
                         } label: {
-                            Text("Delete")
+                            Text("Discard Changes")
                                 .foregroundColor(.red)
                         }
                         .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)

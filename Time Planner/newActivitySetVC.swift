@@ -39,7 +39,7 @@ struct newActivitySetVC: View {
                         Button {
                             presentationMode.wrappedValue.dismiss()
                         } label: {
-                            Text("Discard events")
+                            Text("Cancel")
                                 .foregroundColor(.red)
                         }
                         .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)

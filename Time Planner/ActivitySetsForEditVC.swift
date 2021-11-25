@@ -21,7 +21,7 @@ struct ActivitySetsForEditVC: View {
     }
  */
     @State var isSheetEnabled4 = false
-    @Binding var setsa: [activitySets]
+    @Binding var setsa: [ActivitySets]
     
     var body: some View {
         VStack(alignment:.leading){
@@ -34,11 +34,10 @@ struct ActivitySetsForEditVC: View {
              .padding([.top, .leading, .trailing])
              */
             List{
-                ForEach(setsa) { setsa in
-                    
-                    NavigationLink(destination: ActiviesInSetVC(activty: setsa)) {
+                ForEach(setsa) { singleSetsa in
+                    NavigationLink(destination: ActiviesInSetVC(singleActivitySet: singleSetsa, setsa: $setsa)) {
                         VStack(alignment:.leading){
-                            Text(setsa.name)
+                            Text(singleSetsa.name)
                                 .font(.system(size: 20))
                                 .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                                 .fontWeight(.semibold)

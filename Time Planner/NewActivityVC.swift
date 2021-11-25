@@ -9,41 +9,40 @@ import SwiftUI
 
 struct NewActivityVC: View {
     @Environment(\.presentationMode) var presentationMode
-    @Binding var newActivity: [activitySets]
-    @State var NewActivities = activitySets(name: "", activities: [Activites(name1: "", timeSpending: "", Percentage: "", Priority: "", minTime: 0 , maxTime: 0)] )
+    //@Binding var newActivity: Activity
+    @State var newActivity = Activity(name1: "", timeSpending: "", Percentage: "", Priority: "", minTime: 0 , maxTime: 0)
+    var newlyMadeActivity: (Activity) -> Void
+    
     
     var body: some View {
         NavigationView {
             
             Form {
                 Section(header: Text("Name")) {
-                    ForEach($NewActivities.activities, id: \.id) { event in
-
-                        TextField("Name", text: event.name1).listRowSeparator(.visible)
-                    }
+                        TextField("Name", text: $newActivity .name1).listRowSeparator(.visible)
+                    
                     }
                 Section(header: Text("Time")) {
-                    ForEach($NewActivities.activities, id: \.id) { event in
-                        Slider(value: event.minTime,
+                    
+                        Slider(value: $newActivity.minTime,
                                                   in: 0...120,
                                                   step: 1)
-                        Slider(value: event.maxTime,
+                        Slider(value: $newActivity.maxTime,
                                                   in: 0...120,
                                                   step: 1)
                     
-                    }
+                    
                     
                 }
                 
                 Section(header: Text("Priority")) {
-                    ForEach($NewActivities.activities, id: \.id) { event in
-                    Picker("Priority", selection: event.Priority) {
-                        Text("5")
-                        Text("4")
-                        Text("3")
-                        Text("2")
-                        Text("1")
-                    }
+                    
+                    Picker("Priority", selection: $newActivity.Priority) {
+                        Text("A Must Do").tag("A Must Do")
+                        Text("High Priority").tag("High Priority")
+                        Text("Medium Priority").tag("Medium Priority")
+                        Text("Low Priority").tag("Low Priority")
+                        Text("Very Low Priority").tag("Very Low Priority")
                     }
                     .pickerStyle(WheelPickerStyle())
                         }
@@ -53,6 +52,8 @@ struct NewActivityVC: View {
                     HStack {
                         Spacer()
                         Button {
+                            newlyMadeActivity(newActivity)
+                            print(newActivity.Priority)
                             presentationMode.wrappedValue.dismiss()
                         } label: {
                             Text("Save")
@@ -81,6 +82,6 @@ struct NewActivityVC: View {
 
 struct NewActivity_Previews: PreviewProvider {
     static var previews: some View {
-        NewActivityVC(newActivity: .constant([]))
+        NewActivityVC(newlyMadeActivity: {_ in })
     }
 }

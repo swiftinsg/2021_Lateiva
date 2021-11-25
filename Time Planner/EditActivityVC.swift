@@ -10,18 +10,18 @@ import SwiftUI
 enum EditAction1 {
         case cancel
         case delete
-        case save (Activites)
+        case save (Activity)
         
     }
 
 struct EditActivityVC: View {
   //  @Binding var editActivity: [Activites]
-    @State var EditActivities: Activites
+    @State var EditActivities: Activity
     @Environment(\.presentationMode) var presentationMode
     
     var dismiss : (EditAction1) -> Void
     
-    init(event: Activites, dismiss: @escaping (EditAction1) -> Void) {
+    init(event: Activity, dismiss: @escaping (EditAction1) -> Void) {
         self.dismiss = dismiss
         self._EditActivities = State(initialValue: event)
         
@@ -50,11 +50,11 @@ struct EditActivityVC: View {
                 Section(header: Text("Priority")) {
                     
                     Picker("Priority", selection: $EditActivities.Priority) {
-                        Text("Very High Priority")
-                        Text("High Priority")
-                        Text("Medium Priority")
-                        Text("Low Priority")
-                        Text("Very Low Priority")
+                        Text("A Must Do").tag("A Must Do")
+                        Text("High Priority").tag("High Priority")
+                        Text("Medium Priority").tag("Medium Priority")
+                        Text("Low Priority").tag("Low Priority")
+                        Text("Very Low Priority").tag("Very Low Priority")
                     }
                     .pickerStyle(WheelPickerStyle())
                     
@@ -93,7 +93,7 @@ struct EditActivityVC: View {
 
 struct EditActivityVC_Previews: PreviewProvider {
     static var previews: some View {
-        EditActivityVC(event:Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)) { _ in
+        EditActivityVC(event:Activity(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)) { _ in
             
         }
     }

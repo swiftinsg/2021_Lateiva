@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ActiviesInSetVC: View {
     
-    @State var activty: [activitySets]
-    @State var setsa1 = [activitySets(name: "School", activities: [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activites(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]), activitySets(name: "Work", activities: [Activites(name1: "Dressing up", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)])]
+    @State var singleActivitySet: ActivitySets
+    @State var setsa1 = [ActivitySets(name: "School", activities: [Activity(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activity(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]), ActivitySets(name: "Work", activities: [Activity(name1: "Dressing up", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)])]
     @State var isSheetEnabled5 = false
     @State var isSheetEnabled6 = false
-    @State var selectedEvent1: Activites? = nil
+    @State var selectedEvent1: Activity? = nil
+    @Binding var setsa: [ActivitySets]
     
     
     var body: some View {
@@ -41,75 +42,110 @@ struct ActiviesInSetVC: View {
          
          */
 
-        ForEach(activty) { activiti in
-            List(activiti.activities) { activty in
-                VStack(alignment:.leading){
-                    Text(activty.name1 )
-                        .font(.system(size: 20))
+            
+        List(singleActivitySet.activities) { activity in
+            VStack(alignment:.leading){
+                Text(activity.name1 )
+                    .font(.system(size: 20))
+                    .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+                    .fontWeight(.semibold)
+                    .padding(.vertical)
+                Spacer()
+                
+                HStack {
+                    Text(activity.Priority)
+                        .font(.system(size: 18))
                         .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                        .fontWeight(.semibold)
-                        .padding(.vertical)
+                        .fontWeight(.regular)
+                    .padding(.bottom)
+           
                     Spacer()
                     
-                    HStack {
-                        Text(activty.Priority)
-                            .font(.system(size: 18))
-                            .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                            .fontWeight(.regular)
-                        .padding(.bottom)
-               
-                        Spacer()
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 15)
+                            . frame(width: 100, height:50)
+                            .foregroundColor(Color(red: 0.6431372549019608, green: 0.6078431372549019, blue: 0.9568627450980393))
                         
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 15)
-                                . frame(width: 100, height:50)
-                                .foregroundColor(Color(red: 0.6431372549019608, green: 0.6078431372549019, blue: 0.9568627450980393))
-                            
-                            Button {
-                              isSheetEnabled5 = true
-                            } label: {
-                                Text("Edit")
-                                    .foregroundColor(.white)
-                            }.frame(width: 100, height:50)
-                        }
+                        Button {
+                          isSheetEnabled5 = true
+                        } label: {
+                            Text("Edit")
+                                .foregroundColor(.white)
+                        }.frame(width: 100, height:50)
                     }
                 }
-                .listRowBackground(Color(hue: 0.742, saturation: 0.044, brightness: 0.979))
             }
-            
-        }
+            .listRowBackground(Color(hue: 0.742, saturation: 0.044, brightness: 0.979))
+            }
         .navigationBarTitle(Text("Activities"))
         .navigationBarItems(trailing: Button(action: {
             isSheetEnabled6 = true
-        }, label: {
+            }) {
             Image(systemName: "plus")
-        }))
+        })
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         .sheet(item: $selectedEvent1){ selectedEvent in
             EditActivityVC(event: selectedEvent){editAction in
                 switch editAction {
                 case .cancel:
                     break
                 case .delete:
-                    activitySets.activities.remove(at: activty.activities.firstIndex(of: selectedEvent1!)!)
+
+                    for (index, activity) in singleActivitySet.activities.enumerated() {
+                        if activity.id == selectedEvent.id {
+                            singleActivitySet.activities.remove(at: index)
+                            for (index, activity) in setsa.enumerated() {
+                                if activity.id == singleActivitySet.id {
+                                    setsa[index] = singleActivitySet
+                                }
+                            }
+                        }
+                    }
+                    //activty.activities.remove(at: activty.activities.firstIndex(of: selectedEvent1!)!)
                 case .save(let event):
-                    activty[activty.firstIndex(of: selectedEvent1!)!] = event
+                    singleActivitySet.activities.append(event)
+                    for (index, activity) in setsa.enumerated() {
+                        if activity.id == singleActivitySet.id {
+                            setsa[index] = singleActivitySet
+                        }
+                    }
+                    self.selectedEvent1 = nil
+                    
                 }
-                self.selectedEvent1 = nil
             }
         }
         .sheet(isPresented: $isSheetEnabled6){
-           NewActivityVC(newActivity: $activty)
+            NewActivityVC { newActivity in
+                singleActivitySet.activities.append(newActivity)
+                for (index, activity) in setsa.enumerated() {
+                    if activity.id == singleActivitySet.id {
+                        setsa[index] = singleActivitySet
+                    }
+                }
+            }
        }
   //      .sheet(isPresented: $isSheetEnabled6){
    //         NewActivityVC(newActivity: [])
-        //}
+    //}
+        
+        
+        
         
         
     }
     
     struct ActiviesInSet_Previews: PreviewProvider {
         static var previews: some View {
-            ActiviesInSetVC(activty: activitySets(name: "School", activities: [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activites(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]))
+            ActiviesInSetVC(singleActivitySet: ActivitySets(name: "Test", activities: [Activity(name1: "Test", timeSpending: "5", Percentage: "10", Priority: "3", minTime: 2.0, maxTime: 5.0)]), setsa: .constant([ActivitySets(name: "School", activities: [Activity(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activity(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]), ActivitySets(name: "Work", activities: [Activity(name1: "Dressing up", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)])]))
         }
     }
 }

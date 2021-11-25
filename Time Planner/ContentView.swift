@@ -23,7 +23,7 @@ struct ContentView: View {
     
     
     @State var events = [Event(name: "School", Location: "SST", date: Date.now),Event(name: "Swift Accelerator Programme", Location: "Tinkertanker", date: Date.now), Event(name: "SAP", Location: "Home", date: Date.now), Event(name: "Party", Location: "Jia Chen house", date: Date.now)]
-    @State var setsa = [activitySets(name: "School", activities: [Activites(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activites(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]), activitySets(name: "Work", activities: [Activites(name1: "Dressing up", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]) ]
+    @State var setsa = [ActivitySets(name: "School", activities: [Activity(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activity(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]), ActivitySets(name: "Work", activities: [Activity(name1: "Dressing up", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]) ]
     
     var filterevents: [Event] {
         return events.filter {Calendar.current.isDateInToday($0.date)}

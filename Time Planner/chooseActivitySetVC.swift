@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct chooseActivitySetVC: View {
-    init(setsa: Binding<[activitySets]>) {
+    init(setsa: Binding<[ActivitySets]>) {
         self._set = setsa
             //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))]
@@ -19,7 +19,7 @@ struct chooseActivitySetVC: View {
         }
     
     
-    @Binding var set: [activitySets]
+    @Binding var set: [ActivitySets]
    
     
     var body: some View {

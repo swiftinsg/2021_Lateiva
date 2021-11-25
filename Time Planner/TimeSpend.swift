@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Activites : Identifiable {
+struct Activity : Identifiable {
     var id = UUID()
     var name1 : String
     var timeSpending : String

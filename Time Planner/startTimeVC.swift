@@ -18,7 +18,7 @@ struct startTimeVC: View {
     
     
     
-    init(setsa: Binding<[activitySets]>) {
+    init(setsa: Binding<[ActivitySets]>) {
         self._setsa = setsa
         //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))]
@@ -26,7 +26,7 @@ struct startTimeVC: View {
         //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
     }
-    @Binding var setsa: [activitySets]
+    @Binding var setsa: [ActivitySets]
     
     @State private var date = Date()
     @State private var date1 = Date()

@@ -4,19 +4,21 @@
 //
 //  Created by sanjithsethu on 20/11/21.
 //
+/*
+ let today = Date()
+ let formatter1 = DateFormatter()
+ DateFormatter().dateStyle = .short
+ print(DateFormatter().string(from: Date()))
+ */
 
 import SwiftUI
-let fmt = ISO8601DateFormatter()
-
-let date1 = fmt.date(from: "2017-08-06T19:20:42+0000")!
-let date2 = fmt.date(from: "2020-08-06T19:20:46+0000")!
-
-let diffs = Calendar.current.dateComponents([.year, .month, .day], from: date1, to: date2)
 //print(diffs)
 
+
+// print(diffs)
+
 struct startTimeVC: View {
-    
-    
+   
     
     init(setsa: Binding<[ActivitySets]>) {
         self._setsa = setsa
@@ -27,7 +29,9 @@ struct startTimeVC: View {
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
     }
     @Binding var setsa: [ActivitySets]
-    
+    var timeDiff: Int {
+        return (Calendar.current.dateComponents([.minute], from: date, to: date1).minute ?? 0)
+    }
     @State private var date = Date()
     @State private var date1 = Date()
 
@@ -39,6 +43,10 @@ struct startTimeVC: View {
         ...
         calendar.date(from:endComponents)!
     }()
+    
+
+
+   
     
     var body: some View {
      
@@ -58,6 +66,14 @@ struct startTimeVC: View {
                     .lineLimit(3)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding()
+                
+          //      Button {
+                    // print(Calendar.current.dateComponents([.minute], from: date, to: date1))
+            //    } label: {
+                  //  Text("Tap!")
+                //        .foregroundColor(.red)
+              //  }
+
                 
           //      Text("")
            //    Text("")
@@ -94,31 +110,32 @@ struct startTimeVC: View {
                     .frame(minWidth: 60, maxWidth: .infinity, minHeight: 130, maxHeight: 150)
                 
                 Spacer()
+              
                 
-                NavigationLink(destination: chooseActivitySetVC(setsa: $setsa)) {
                     ZStack{
                         RoundedRectangle(cornerRadius: 15)
                             .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
                             .foregroundColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9490196078431372))
+                    
                         
-                        Text("Continue").foregroundColor(.blue)
-                            .font(.system(size: 18))
-                            .frame(maxWidth: .infinity, minHeight: 50, maxHeight: 60)
                         
-                        /*
-                         Button {
+                        
+                         Button(action: {
+                         }) {
+                             NavigationLink(destination: chooseActivitySetVC(set: $setsa, timeDiff: timeDiff)) {
+                             Text("Continue")
+                                 .foregroundColor(.blue)
+                                 .font(.system(size: 18))
+                                 .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
+                                 
+                             }
+                        
+                        
                          
-                         } label: {
-                         Text("Continue")
-                         .foregroundColor(.blue)
-                         .font(.system(size: 18))
-                         .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
-                         }
-                         
-                         */
+                    }
                     }
                     .padding(.horizontal)
-                }
+                
                 /*
                  ZStack{
                  RoundedRectangle(cornerRadius: 15)

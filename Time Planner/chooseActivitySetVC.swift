@@ -8,25 +8,22 @@
 import SwiftUI
 
 struct chooseActivitySetVC: View {
-    init(setsa: Binding<[ActivitySets]>) {
-        self._set = setsa
-            //Use this if NavigationBarTitle is with Large Font
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))]
-
-            //Use this if NavigationBarTitle is with displayMode = .inline
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
-        UITableView.appearance().backgroundColor = .clear
-        }
-    
-    
+   
     @Binding var set: [ActivitySets]
+    var timeDiff: Int
    
     
     var body: some View {
         VStack(alignment:.leading){
             Text("")
           //  Text("")
-            
+      /*      Button {
+                 print(timeDiff)
+            } label: {
+                Text("Tap!")
+                    .foregroundColor(.red)
+            }
+        */
             Text("Choose which set of activities would you like to use to get ready.")
                 .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                 .font(.system(size: 18))
@@ -35,7 +32,7 @@ struct chooseActivitySetVC: View {
                 .fixedSize(horizontal: false, vertical: true)
             
             List(set) { set in
-                NavigationLink(destination: TimeSpentVC(set: set)) {
+                NavigationLink(destination: TimeSpentVC(set: set, timeDiff: timeDiff )) {
                 VStack(alignment:.leading){
                     Text(set.name)
                         .font(.system(size: 20))
@@ -47,6 +44,8 @@ struct chooseActivitySetVC: View {
                 }.listRowBackground(Color(hue: 0.742, saturation: 0.049, brightness: 0.984))
         }
         }.navigationBarTitle("Activity Sets")
+        .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+
     
 
     }
@@ -54,7 +53,7 @@ struct chooseActivitySetVC: View {
 
 struct chooseActivitySetVC_Previews: PreviewProvider {
     static var previews: some View {
-        chooseActivitySetVC(setsa: .constant([]))
+        chooseActivitySetVC(set: .constant([]), timeDiff: 0)
     }
 }
 

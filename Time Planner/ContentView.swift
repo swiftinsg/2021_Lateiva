@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+   
+    /*
     init() {
         //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))]
@@ -15,15 +17,20 @@ struct ContentView: View {
         //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
     }
+    */
+    
+    //  @State var events = [Event(name: "School", Location: "SST", date: Date.now),Event(name: "Swift Accelerator Programme", Location: "Tinkertanker", date: Date.now), Event(name: "SAP", Location: "Home", date: Date.now), Event(name: "Party", Location: "Jia Chen house", date: Date.now)]
+    //  @State var setsa = [ActivitySets(name: "School", activities: [Activity(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activity(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]), ActivitySets(name: "Work", activities: [Activity(name1: "Dressing up", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]) ]
+    
     @State var selectedEvent: Event? = nil
     @State var isSheetEnabled2 = false
     @State var isSheetEnabled3 = false
     //DateFormatter().string(from: Date())
     
+    @Binding var events: [Event]
+    @Binding var setsa: [ActivitySets]
     
-    
-    @State var events = [Event(name: "School", Location: "SST", date: Date.now),Event(name: "Swift Accelerator Programme", Location: "Tinkertanker", date: Date.now), Event(name: "SAP", Location: "Home", date: Date.now), Event(name: "Party", Location: "Jia Chen house", date: Date.now)]
-    @State var setsa = [ActivitySets(name: "School", activities: [Activity(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activity(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]), ActivitySets(name: "Work", activities: [Activity(name1: "Dressing up", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]) ]
+
     
     var filterevents: [Event] {
         return events.filter {Calendar.current.isDateInToday($0.date)}
@@ -162,7 +169,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(events: .constant([Event(name: "This is a Sample", Location: "Please Create your event", date: Date.now)]), setsa: .constant([ActivitySets(name: "Sample", activities: [Activity(name1: "Create youw Own Now", timeSpending: "2min", Percentage: "100%", Priority: "Click on the + icon", minTime: 1, maxTime: 5)])]))
     }
 }
 

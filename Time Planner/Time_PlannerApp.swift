@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct Time_PlannerApp: App {
+    
+    @ObservedObject var eventsData = EventsData()
+    @ObservedObject var setsaData = ActivitySetssData()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(events: $eventsData.events, setsa: $setsaData.setsa)
         }
     }
 }

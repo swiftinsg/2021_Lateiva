@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Activity : Identifiable {
+struct Activity : Identifiable, Codable {
     var id = UUID()
     var name1 : String
     var timeSpending : String

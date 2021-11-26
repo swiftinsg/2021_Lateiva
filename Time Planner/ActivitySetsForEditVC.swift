@@ -68,6 +68,6 @@ struct ActivitySetsForEditVC: View {
 
 struct ActivitySetsForEditVC_Previews: PreviewProvider {
     static var previews: some View {
-        ActivitySetsForEditVC(setsa: .constant([]))
+        ActivitySetsForEditVC(setsa: .constant([ActivitySets(name: "Sample", activities: [Activity(name1: "Create youw Own Now", timeSpending: "2min", Percentage: "100%", Priority: "Click on the + icon", minTime: 1, maxTime: 5)])]))
     }
 }

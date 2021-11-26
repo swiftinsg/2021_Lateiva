@@ -24,7 +24,7 @@ struct Time_PlannerApp: App {
                 .onChange(of: scenePhase) { phase in
                     if phase == .inactive {
                         eventsData.save()
-                        setsaData.load()
+                        setsaData.save()
                     }
                 }
         }

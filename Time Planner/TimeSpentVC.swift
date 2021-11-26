@@ -8,7 +8,46 @@
 import SwiftUI
 
 struct TimeSpentVC: View {
-    
+    var time1 = [0]
+/*
+    init(){
+                for (hi) in set.activities{
+                    if hi.Priority == "A Must Do"{
+                        time1.append(5)
+                   } else if hi.Priority == "High Priority" {
+                       time1.append(4)
+                    }else if hi.Priority == "Medium Priority"{
+                        time1.append(3)
+                    }else if hi.Priority == "Low Priority"{
+                        time1.append(2)
+                    }else if hi.Priority == "Very Low Priority"{
+                        time1.append(1)
+                    }
+                    
+                let sanjith1 = timeDiff/(time1.reduce(0, +))
+                    ForEach (set.activities) { sanjith in
+                        if sanjith.Priority == "A Must Do"{
+                            time1.append(5)
+                       } else if sanjith.Priority == "High Priority" {
+                           time1.append(4)
+                        }else if sanjith.Priority == "Medium Priority"{
+                            time1.append(3)
+                        }else if sanjith.Priority == "Low Priority"{
+                            time1.append(2)
+                        }else if sanjith.Priority == "Very Low Priority"{
+                            time1.append(1)
+                        }
+                        
+                    }
+                    
+                     
+                   
+                   
+                }
+
+                
+            }
+        */
     
     var set: ActivitySets
   //  @Binding var ser: [ActivitySets]
@@ -26,8 +65,8 @@ struct TimeSpentVC: View {
     var leaveHouse = Text("6:00am") //Add actual code here to calculate when to leave house
     var timeDiff: Int
     var body: some View {
-    var time1 = [0]
-       
+        
+        
         
         
         
@@ -95,15 +134,8 @@ struct TimeSpentVC: View {
                      time1.append(1)
                  }
                  
-               print(timeDiff/(time1.reduce(0, +)))
-                 
-                  
-                
-                
+               timeDiff/(time1.reduce(0, +)))  
              }
-             
-             
-             
             }, label: {
                Text("Calculate")
             }))

@@ -43,6 +43,8 @@ struct startTimeVC: View {
         ...
         calendar.date(from:endComponents)!
     }()
+    var time1 = [0]
+
     
 
 
@@ -116,23 +118,17 @@ struct startTimeVC: View {
                         RoundedRectangle(cornerRadius: 15)
                             .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
                             .foregroundColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9490196078431372))
-                    
+                        Button {
+                            
+                        } label: {
+                            NavigationLink(destination: chooseActivitySetVC(set: $setsa, timeDiff: timeDiff)){
+                        Text("Continue")
+                        .foregroundColor(.red)
+                        .font(.system(size: 18))
+                        .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
+                        }
+                        }
                         
-                        
-                        
-                         Button(action: {
-                         }) {
-                             NavigationLink(destination: chooseActivitySetVC(set: $setsa, timeDiff: timeDiff)) {
-                             Text("Continue")
-                                 .foregroundColor(.blue)
-                                 .font(.system(size: 18))
-                                 .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
-                                 
-                             }
-                        
-                        
-                         
-                    }
                     }
                     .padding(.horizontal)
                 

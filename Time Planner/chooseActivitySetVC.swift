@@ -32,7 +32,7 @@ struct chooseActivitySetVC: View {
                 .fixedSize(horizontal: false, vertical: true)
             
             List(set) { set in
-                NavigationLink(destination: TimeSpentVC(set: set, timeDiff: timeDiff )) {
+                NavigationLink(destination: TimeSpentVC(something: set, hello: timeDiff)) {
                 VStack(alignment:.leading){
                     Text(set.name)
                         .font(.system(size: 20))

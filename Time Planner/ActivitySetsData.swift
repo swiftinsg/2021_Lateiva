@@ -11,7 +11,7 @@ import SwiftUI
 class ActivitySetssData: ObservableObject {
     @Published var setsa: [ActivitySets] = []
     
-    let sampleActivitySetss = [ActivitySets(name: "Sample", activities: [Activity(name1: "Create youw Own Now", timeSpending: "2min", Percentage: "100%", Priority: "Click on the + icon", minTime: 1, maxTime: 5)])]
+    let sampleActivitySetss = [ActivitySets(name: "This is a sample", activities: [Activity(name1: "Create your own Now", timeSpending: "2 min", Percentage: "100%", Priority: "Click on the + icon", minTime: 1, maxTime: 5)])]
     
     func getArchiveURL() -> URL {
         let plistName = "activitySets.plist"

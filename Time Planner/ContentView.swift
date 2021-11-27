@@ -171,7 +171,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(events: .constant([Event(name: "This is a Sample", Location: "Please Create your event", date: Date.now)]), setsa: .constant([ActivitySets(name: "Sample", activities: [Activity(name1: "Create youw Own Now", timeSpending: 2, Percentage: "100%", Priority: "Click on the + icon", minTime: 1, maxTime: 5)])]))
+        ContentView(events: .constant([Event(name: "This is a sample", Location: "Please create your event", date: Date.now)]), setsa: .constant([ActivitySets(name: "Sample", activities: [Activity(name1: "Create your Own Now", timeSpending: 2, Percentage: "100%", Priority: "Click on the + icon", minTime: 1, maxTime: 5)])]))
     }
 }
 

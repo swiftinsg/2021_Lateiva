@@ -11,7 +11,7 @@ import SwiftUI
 class EventsData: ObservableObject {
     @Published var events: [Event] = []
     
-    let sampleEvents = [Event(name: "This is a Sample", Location: "Please Create your event", date: Date.now)]
+    let sampleEvents = [Event(name: "This is a sample", Location: "Please create your event", date: Date.now)]
     
     func getArchiveURL() -> URL {
         let plistName = "events.plist"

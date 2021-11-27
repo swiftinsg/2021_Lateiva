@@ -10,7 +10,7 @@ import SwiftUI
 struct NewActivityVC: View {
     @Environment(\.presentationMode) var presentationMode
     //@Binding var newActivity: Activity
-    @State var newActivity = Activity(name1: "", timeSpending: "", Percentage: "", Priority: "", minTime: 0 , maxTime: 0)
+    @State var newActivity = Activity(name1: "", timeSpending: 0, Percentage: "", Priority: "", minTime: 0 , maxTime: 0)
     var newlyMadeActivity: (Activity) -> Void
     
     

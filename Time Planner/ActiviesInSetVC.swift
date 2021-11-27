@@ -10,7 +10,7 @@ import SwiftUI
 struct ActiviesInSetVC: View {
     
     @State var singleActivitySet: ActivitySets
-    @State var setsa1 = [ActivitySets(name: "School", activities: [Activity(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activity(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]), ActivitySets(name: "Work", activities: [Activity(name1: "Dressing up", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)])]
+    @State var setsa1 = [ActivitySets(name: "School", activities: [Activity(name1: "Brushing", timeSpending: 15, Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activity(name1: "Bathing", timeSpending: 15, Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]), ActivitySets(name: "Work", activities: [Activity(name1: "Dressing up", timeSpending: 15, Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)])]
     @State var isSheetEnabled5 = false
     @State var isSheetEnabled6 = false
     @State var selectedEvent1: Activity? = nil
@@ -43,8 +43,8 @@ struct ActiviesInSetVC: View {
          */
         
         
-        List {
-            ForEach(singleActivitySet.activities) { activity in
+        
+            List(singleActivitySet.activities) { activity in
                 VStack(alignment:.leading){
                     Text(activity.name1 )
                         .font(.system(size: 20))
@@ -77,18 +77,21 @@ struct ActiviesInSetVC: View {
                     }
                 }.listRowBackground(Color(hue: 0.742, saturation: 0.044, brightness: 0.979))
                 
-            }.onDelete { offsets in
-                setsa.remove(atOffsets: offsets)
-            }.onMove { source, destination in
-                setsa.move(fromOffsets: source, toOffset: destination)
             }
-        }.buttonStyle(.plain)
+
+//            .onDelete { offsets in
+//                setsa.remove(atOffsets: offsets)
+//            }.onMove { source, destination in
+//                setsa.move(fromOffsets: source, toOffset: destination)
+//            }
+           .buttonStyle(.plain)
             .navigationBarTitle(Text("Activities"))
             .navigationBarItems(trailing: Button(action: {
                 isSheetEnabled6 = true
             }) {
                 Image(systemName: "plus")
             })
+            .navigationBarItems(trailing: EditButton())
             .sheet(item: $selectedEvent1){ selectedEvent1 in
                 EditActivityVC(event: selectedEvent1){editAction in
                     switch editAction {
@@ -148,7 +151,7 @@ struct ActiviesInSetVC: View {
     
     struct ActiviesInSet_Previews: PreviewProvider {
         static var previews: some View {
-            ActiviesInSetVC(singleActivitySet: ActivitySets(name: "Test", activities: [Activity(name1: "Test", timeSpending: "5", Percentage: "10", Priority: "3", minTime: 2.0, maxTime: 5.0)]), setsa: .constant([ActivitySets(name: "School", activities: [Activity(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activity(name1: "Bathing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]), ActivitySets(name: "Work", activities: [Activity(name1: "Dressing up", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)])]))
+            ActiviesInSetVC(singleActivitySet: ActivitySets(name: "Test", activities: [Activity(name1: "Test", timeSpending: 5, Percentage: "10", Priority: "3", minTime: 2.0, maxTime: 5.0)]), setsa: .constant([ActivitySets(name: "School", activities: [Activity(name1: "Brushing", timeSpending: 15, Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activity(name1: "Bathing", timeSpending: 15, Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]), ActivitySets(name: "Work", activities: [Activity(name1: "Dressing up", timeSpending: 15, Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)])]))
         }
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 struct Activity : Identifiable, Codable {
     var id = UUID()
     var name1 : String
-    var timeSpending : String
+    var timeSpending : Int
     var Percentage: String
     var Priority : String
     var minTime : Double

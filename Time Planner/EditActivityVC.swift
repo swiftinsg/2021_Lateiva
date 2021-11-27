@@ -75,7 +75,8 @@ struct EditActivityVC: View {
                     HStack {
                         Spacer()
                         Button {
-                            dismiss(.cancel)
+                            dismiss(.delete)
+                            // dismiss(.cancel)
                             presentationMode.wrappedValue.dismiss()
 
                             
@@ -96,7 +97,7 @@ struct EditActivityVC: View {
 
 struct EditActivityVC_Previews: PreviewProvider {
     static var previews: some View {
-        EditActivityVC(event:Activity(name1: "Brushing", timeSpending: "15min", Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)) { _ in
+        EditActivityVC(event:Activity(name1: "Brushing", timeSpending: 15, Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)) { _ in
             
         }
     }

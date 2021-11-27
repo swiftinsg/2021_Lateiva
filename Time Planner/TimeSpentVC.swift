@@ -78,20 +78,13 @@ struct TimeSpentVC: View {
                             
                             Spacer()
                             
-                                if  timings.timeSpending < timings.minTime {
+                                if  timings.timeSpending < (timings.minTime-2) {
                                 Text("0 min")
                                     .font(.system(size: 18))
                                     .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                                     .fontWeight(.medium)
                                 .padding(.bottom)
                             }
-                                else if timings.timeSpending > timings.maxTime {
-                                    Text("\(timings.maxTime) min")
-                                        .font(.system(size: 18))
-                                        .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                                        .fontWeight(.medium)
-                                    .padding(.bottom)
-                                }
                                 else {
                                     Text("\(timings.timeSpending) min")
                                         .font(.system(size: 18))
@@ -174,6 +167,8 @@ struct TimeSpentVC: View {
                             }
                             
                         }
+                        
+                        
                         print(newValue)
                         
                         print(timeDiff)

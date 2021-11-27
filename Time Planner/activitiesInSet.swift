@@ -15,4 +15,3 @@ struct activitiesInSets : Identifiable {
     var Priority : String
 }
  */
-

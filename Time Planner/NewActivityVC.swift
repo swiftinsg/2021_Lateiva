@@ -10,7 +10,7 @@ import SwiftUI
 struct NewActivityVC: View {
     @Environment(\.presentationMode) var presentationMode
     //@Binding var newActivity: Activity
-    @State var newActivity = Activity(name1: "", timeSpending: 0, Percentage: "", Priority: "", minTime: 0 , maxTime: 0)
+    @State var newActivity = Activity(name1: "", timeSpending: 0, Percentage: "", Priority: "", minTime: 1 , maxTime: 1)
     var newlyMadeActivity: (Activity) -> Void
     
     let formatter: NumberFormatter = {
@@ -40,13 +40,9 @@ struct NewActivityVC: View {
 //                                .padding()
 //                                .keyboardType(.decimalPad)
                     
-                    Stepper(value: $newActivity.minTime, step: 1){
-                        Text("Min Time: \(self.newActivity.minTime)")
-                    }
+                    Stepper("Min time: \(newActivity.minTime)", value: $newActivity.minTime, in: 1...newActivity.maxTime)
                     
-                    Stepper(value: $newActivity.maxTime, step: 1){
-                        Text("Max Time: \(self.newActivity.maxTime)")
-                    }
+                    Stepper("Max Time: \(newActivity.maxTime)", value: $newActivity.maxTime, in: newActivity.minTime...1000000000)
                 }
                 
                 Section(header: Text("Priority")) {

@@ -18,7 +18,6 @@ import SwiftUI
 // print(diffs)
 
 struct startTimeVC: View {
-   
     
     init(setsa: Binding<[ActivitySets]>) {
         self._setsa = setsa
@@ -28,13 +27,14 @@ struct startTimeVC: View {
         //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
     }
+    
     @Binding var setsa: [ActivitySets]
     var timeDiff: Int {
         return (Calendar.current.dateComponents([.minute], from: date, to: date1).minute ?? 0)
     }
     @State private var date = Date()
     @State private var date1 = Date()
-
+    
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
         let startComponents = DateComponents(year: 2021, month: 1, day: 1)
@@ -44,14 +44,14 @@ struct startTimeVC: View {
         calendar.date(from:endComponents)!
     }()
     var time1 = [0]
-
     
-
-
-   
+    
+    
+    
+    
     
     var body: some View {
-     
+        ScrollView {
             VStack(alignment:.leading){
                 //                Text("Hello,")
                 //                    .fontWeight(.heavy)
@@ -69,19 +69,6 @@ struct startTimeVC: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .padding()
                 
-          //      Button {
-                    // print(Calendar.current.dateComponents([.minute], from: date, to: date1))
-            //    } label: {
-                  //  Text("Tap!")
-                //        .foregroundColor(.red)
-              //  }
-
-                
-          //      Text("")
-           //    Text("")
-               // Text("")
-                //    Text("")
-                
                 DatePicker(
                     "",
                     selection: $date,
@@ -93,7 +80,9 @@ struct startTimeVC: View {
                     .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                     .frame(minWidth: 60, maxWidth: .infinity, minHeight: 130, maxHeight: 150)
                 Spacer()
-
+                Text("")
+                    .frame(maxWidth: .infinity, minHeight: 60)
+                
                 Text("When would you like to leave your house?")
                     .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                     .font(.system(size: 20))
@@ -112,25 +101,27 @@ struct startTimeVC: View {
                     .frame(minWidth: 60, maxWidth: .infinity, minHeight: 130, maxHeight: 150)
                 
                 Spacer()
-              
+                Text("")
+                    .frame(maxWidth: .infinity, minHeight: 100)
                 
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 15)
-                            .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
-                            .foregroundColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9490196078431372))
-                        Button {
-                            
-                        } label: {
-                            NavigationLink(destination: chooseActivitySetVC(set: $setsa, timeDiff: timeDiff)){
-                        Text("Continue")
-                        .foregroundColor(.red)
-                        .font(.system(size: 18))
-                        .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
-                        }
-                        }
+                ZStack{
+                    RoundedRectangle(cornerRadius: 15)
+                        .frame(maxWidth: .infinity, minHeight: 60)
+                        .foregroundColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9490196078431372))
+               
+                    Button {
                         
+                    } label: {
+                        NavigationLink(destination: chooseActivitySetVC(set: $setsa, timeDiff: timeDiff)){
+                            Text("Continue")
+                                .foregroundColor(.red)
+                                .font(.system(size: 18))
+                                .frame(maxWidth: .infinity, minHeight: 60)
+                        }
                     }
-                    .padding(.horizontal)
+                    
+                }
+                .padding(.horizontal)
                 
                 /*
                  ZStack{
@@ -151,9 +142,10 @@ struct startTimeVC: View {
                 
                 // Spacer()
             }
-            .navigationBarTitle(Text("Hello,"))
+            .navigationBarTitle(Text("Hello"))
+            .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
             
-        
+        }
         
         
     }

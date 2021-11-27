@@ -43,14 +43,9 @@ struct EditActivityVC: View {
 //                                                  in: 0...60,
 //                                                  step: 1)
                     
-                    Stepper(value: $EditActivities.minTime, step: 1){
-                        Text("Min Time: \(self.EditActivities.minTime)")
-                    }
+                    Stepper("Min time: \(EditActivities.minTime)", value: $EditActivities.minTime, in: 1...EditActivities.maxTime)
                     
-                    Stepper(value: $EditActivities.maxTime, step: 1){
-                        Text("Max Time: \(self.EditActivities.maxTime)")
-                    }
-
+                    Stepper("Max time: \(EditActivities.maxTime)", value: $EditActivities.maxTime, in: EditActivities.minTime...100000000000)
                 }
                 
                 Section(header: Text("Priority")) {
@@ -62,8 +57,6 @@ struct EditActivityVC: View {
                         Text("Low Priority").tag("Low Priority")
                         Text("Very Low Priority").tag("Very Low Priority")
                     }
-              
-                    
                 }
                 
                 Section {

@@ -30,12 +30,23 @@ struct NewActivityVC: View {
                     }
                 Section(header: Text("Time")) {
                     
+//                    Slider(value: $newActivity.minTime,
+//                                                  in: 0...60,
+//                                                  step: 1)
+//                    Slider(value: $newActivity.maxTime,
+//                                                  in: 0...60,
+//                                                  step: 1)
 //                    TextField("Minimum Time", text: "\(newActivity.minTime)")
 //                                .padding()
 //                                .keyboardType(.decimalPad)
-           //         Stepper("\(newActivity.minTime)", onIncrement: 1, onDecrement: 1)
                     
+                    Stepper(value: $newActivity.minTime, step: 1){
+                        Text("Min Time: \(self.newActivity.minTime)")
+                    }
                     
+                    Stepper(value: $newActivity.maxTime, step: 1){
+                        Text("Max Time: \(self.newActivity.maxTime)")
+                    }
                 }
                 
                 Section(header: Text("Priority")) {

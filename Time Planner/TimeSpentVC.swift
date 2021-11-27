@@ -59,25 +59,32 @@ struct TimeSpentVC: View {
                             
                             Spacer()
                             
-                            Text("\(timings.timeSpending) min")
+                            Text("")
                                 .font(.system(size: 18))
                                 .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                                .fontWeight(.medium)
-                                .padding(.bottom)
+                                .fontWeight(.regular)
+//                            Text(timings.Percentage)
+//                                .font(.system(size: 18))
+//                                .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+//                                .fontWeight(.regular)
                         }
                         Spacer()
                         HStack {
-                            Text(timings.Percentage)
+                            Text(timings.Priority)
                                 .font(.system(size: 18))
                                 .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                                 .fontWeight(.regular)
                             
                             Spacer()
                             
-                            Text(timings.Priority)
+                            Text("\(timings.timeSpending) min")
                                 .font(.system(size: 18))
                                 .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                                .fontWeight(.regular)
+                                .fontWeight(.medium)
+                                .padding(.bottom)
+                            
+
+
                         }
                     }
                     .onAppear{

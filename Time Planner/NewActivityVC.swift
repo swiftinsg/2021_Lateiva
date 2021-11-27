@@ -13,6 +13,12 @@ struct NewActivityVC: View {
     @State var newActivity = Activity(name1: "", timeSpending: 0, Percentage: "", Priority: "", minTime: 0 , maxTime: 0)
     var newlyMadeActivity: (Activity) -> Void
     
+    let formatter: NumberFormatter = {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            return formatter
+        }()
+    
     
     var body: some View {
         NavigationView {
@@ -24,13 +30,10 @@ struct NewActivityVC: View {
                     }
                 Section(header: Text("Time")) {
                     
-                        Slider(value: $newActivity.minTime,
-                                                  in: 0...120,
-                                                  step: 1)
-                        Slider(value: $newActivity.maxTime,
-                                                  in: 0...120,
-                                                  step: 1)
-                    
+//                    TextField("Minimum Time", text: "\(newActivity.minTime)")
+//                                .padding()
+//                                .keyboardType(.decimalPad)
+           //         Stepper("\(newActivity.minTime)", onIncrement: 1, onDecrement: 1)
                     
                     
                 }
@@ -43,6 +46,7 @@ struct NewActivityVC: View {
                         Text("Medium Priority").tag("Medium Priority")
                         Text("Low Priority").tag("Low Priority")
                         Text("Very Low Priority").tag("Very Low Priority")
+                        
                     }
                         }
                     

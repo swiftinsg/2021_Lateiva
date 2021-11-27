@@ -57,7 +57,7 @@ struct ActivitySetsForEditVC: View {
                     setsa.move(fromOffsets: source, toOffset: destination)
                 }
             }
-            .navigationBarTitle("Activities")
+            .navigationBarTitle("Activity Sets")
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                 .navigationBarItems(trailing: Button(action: {
                     isSheetEnabled4 = true

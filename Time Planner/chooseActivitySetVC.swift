@@ -9,6 +9,9 @@ import SwiftUI
 
 struct chooseActivitySetVC: View {
    
+    
+    
+    
     @Binding var set: [ActivitySets]
     var timeDiff: Int
    

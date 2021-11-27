@@ -49,7 +49,7 @@ struct TimeSpentVC: View {
 //                .fixedSize(horizontal: false, vertical: true)
             
             List(activityArray) { timings in
-         //      if timings.minTime < timings.timeSpending {
+//      if timings.minTime < timings.timeSpending {
                     VStack(alignment:.leading){
                         HStack {
                             Text(timings.name1)
@@ -180,7 +180,7 @@ struct TimeSpentVC: View {
                     .cornerRadius(20)
                     .padding(.vertical, 1)
                     .listRowSeparator(.hidden)
-         //       }
+                //       }
             }
             
             .listStyle(.plain)

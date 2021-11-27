@@ -127,6 +127,7 @@ struct ContentView: View {
                 
             }
             .navigationBarTitle(Text("Events"))
+            .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
             .navigationBarItems(trailing: Button(action: {
                 isSheetEnabled2 = true
             }, label: {
@@ -136,7 +137,7 @@ struct ContentView: View {
                 Text("Activities")
             })
             .navigationBarItems(trailing: EditButton())
-            .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+            
         }
         .sheet(item: $selectedEvent){ selectedEvent in
             editEventsVC(event: selectedEvent){editAction in

@@ -12,10 +12,6 @@
  */
 
 import SwiftUI
-//print(diffs)
-
-
-// print(diffs)
 
 struct startTimeVC: View {
     
@@ -45,30 +41,26 @@ struct startTimeVC: View {
     }()
     var time1 = [0]
     
-    
-    
-    
-    
-    
     var body: some View {
-        ScrollView {
-            VStack(alignment:.leading){
-                //                Text("Hello,")
-                //                    .fontWeight(.heavy)
-                //                    .foregroundColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))
-                //                    .multilineTextAlignment(.leading)
-                //                   .font(.system(size: 50))
-                //                   .padding(.all)
-                
-                Text("")
-                
-                Text("When would you like to start getting ready?")
-                    .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                    .font(.system(size: 20))
-                    .lineLimit(3)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .padding()
-                
+        Form{
+            //                Text("Hello,")
+            //                    .fontWeight(.heavy)
+            //                    .foregroundColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))
+            //                    .multilineTextAlignment(.leading)
+            //                   .font(.system(size: 50))
+            //                   .padding(.all)
+            
+            
+            
+            
+            //                    .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+            //                    .font(.system(size: 20))
+            //                    .lineLimit(3)
+            //                    .fixedSize(horizontal: false, vertical: true)
+            //                    .padding()
+            
+            
+            Section {
                 DatePicker(
                     "",
                     selection: $date,
@@ -78,17 +70,23 @@ struct startTimeVC: View {
                     .padding([.bottom, .trailing])
                     .font(.system(size: 13))
                     .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                    .frame(minWidth: 60, maxWidth: .infinity, minHeight: 130, maxHeight: 150)
-                Spacer()
-                Text("")
-                    .frame(maxWidth: .infinity, minHeight: 60)
-                
-                Text("When would you like to leave your house?")
-                    .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                    .font(.system(size: 20))
-                    .lineLimit(3)
-                    .padding(.all)
-                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, maxHeight: 150, alignment: .leading)
+            } header: {
+                Text("When would you like to start getting ready?")
+            }
+            
+            
+            
+            
+            
+            //                    .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+            //                    .font(.system(size: 20))
+            //                    .lineLimit(3)
+            //                    .padding(.all)
+            //                    .fixedSize(horizontal: false, vertical: true)
+            
+            
+            Section {
                 DatePicker(
                     "",
                     selection: $date1,
@@ -98,54 +96,66 @@ struct startTimeVC: View {
                     .padding([.bottom, .trailing])
                     .font(.system(size: 13))
                     .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                    .frame(minWidth: 60, maxWidth: .infinity, minHeight: 130, maxHeight: 150)
-                
-                Spacer()
-                Text("")
-                    .frame(maxWidth: .infinity, minHeight: 100)
-                
-                ZStack{
-                    RoundedRectangle(cornerRadius: 15)
+                    .frame(maxWidth: .infinity, maxHeight: 150, alignment: .leading)
+            } header: {
+                Text("When would you like to leave your house?")
+            }
+            
+            
+            //                ZStack{
+            //                    RoundedRectangle(cornerRadius: 15)
+            //                        .frame(maxWidth: .infinity, minHeight: 60)
+            //                        .foregroundColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9490196078431372))
+            //
+            //                    Button {
+            //
+            //                    } label: {
+            //                        NavigationLink(destination: chooseActivitySetVC(set: $setsa, timeDiff: timeDiff)){
+            //                            Text("Continue")
+            //                                .foregroundColor(.blue)
+            //                                .font(.system(size: 18))
+            //                                .frame(maxWidth: .infinity, minHeight: 60)
+            //                        }
+            //                    }
+            //
+            //                }
+            //                .padding(.horizontal)
+            NavigationLink(destination: chooseActivitySetVC(set: $setsa, timeDiff: timeDiff)){
+                Button {
+                    
+                } label: {
+                    
+                    Text("Continue")
+                        .foregroundColor(.blue)
+                        .font(.system(size: 18))
                         .frame(maxWidth: .infinity, minHeight: 60)
-                        .foregroundColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9490196078431372))
-               
-                    Button {
-                        
-                    } label: {
-                        NavigationLink(destination: chooseActivitySetVC(set: $setsa, timeDiff: timeDiff)){
-                            Text("Continue")
-                                .foregroundColor(.red)
-                                .font(.system(size: 18))
-                                .frame(maxWidth: .infinity, minHeight: 60)
-                        }
-                    }
                     
                 }
-                .padding(.horizontal)
-                
-                /*
-                 ZStack{
-                 RoundedRectangle(cornerRadius: 15)
-                 .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
-                 .foregroundColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9490196078431372))
-                 Button {
-                 
-                 } label: {
-                 Text("Cancel")
-                 .foregroundColor(.red)
-                 .font(.system(size: 18))
-                 .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
-                 }
-                 }
-                 .padding(.horizontal)
-                 */
-                
-                // Spacer()
             }
-            .navigationBarTitle(Text("Hello"))
-            .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
             
+            
+            /*
+             ZStack{
+             RoundedRectangle(cornerRadius: 15)
+             .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
+             .foregroundColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9490196078431372))
+             Button {
+             
+             } label: {
+             Text("Cancel")
+             .foregroundColor(.red)
+             .font(.system(size: 18))
+             .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
+             }
+             }
+             .padding(.horizontal)
+             */
+            
+            // Spacer()
         }
+        .navigationBarTitle(Text("Hello"))
+        .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+        
         
         
     }

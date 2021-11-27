@@ -10,7 +10,6 @@
 		C520532F274910B900F24D17 /* newEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C520532E274910B900F24D17 /* newEventVC.swift */; };
 		C52053312749116100F24D17 /* startTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52053302749116000F24D17 /* startTimeVC.swift */; };
 		C5240255274A24B9005B2D07 /* chooseActivitySetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5240254274A24B9005B2D07 /* chooseActivitySetVC.swift */; };
-		C5240257274A2513005B2D07 /* activitiesInSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5240256274A2513005B2D07 /* activitiesInSet.swift */; };
 		C5240259274A277D005B2D07 /* ActivitySets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5240258274A277D005B2D07 /* ActivitySets.swift */; };
 		C524025D274A2F6D005B2D07 /* TimeSpend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524025C274A2F6D005B2D07 /* TimeSpend.swift */; };
 		C524025F274A2FDB005B2D07 /* TimeSpentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524025E274A2FDB005B2D07 /* TimeSpentVC.swift */; };
@@ -33,7 +32,6 @@
 		C520532E274910B900F24D17 /* newEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newEventVC.swift; sourceTree = "<group>"; };
 		C52053302749116000F24D17 /* startTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startTimeVC.swift; sourceTree = "<group>"; };
 		C5240254274A24B9005B2D07 /* chooseActivitySetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseActivitySetVC.swift; sourceTree = "<group>"; };
-		C5240256274A2513005B2D07 /* activitiesInSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activitiesInSet.swift; sourceTree = "<group>"; };
 		C5240258274A277D005B2D07 /* ActivitySets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySets.swift; sourceTree = "<group>"; };
 		C524025C274A2F6D005B2D07 /* TimeSpend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSpend.swift; sourceTree = "<group>"; };
 		C524025E274A2FDB005B2D07 /* TimeSpentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSpentVC.swift; sourceTree = "<group>"; };
@@ -84,18 +82,17 @@
 			isa = PBXGroup;
 			children = (
 				C5267CD92746316200816DC1 /* Time_PlannerApp.swift */,
+				C5267CDB2746316200816DC1 /* ContentView.swift */,
 				C5240260274A6B72005B2D07 /* editEventsVC.swift */,
 				C520532E274910B900F24D17 /* newEventVC.swift */,
 				C52053302749116000F24D17 /* startTimeVC.swift */,
 				C5240254274A24B9005B2D07 /* chooseActivitySetVC.swift */,
 				C524025E274A2FDB005B2D07 /* TimeSpentVC.swift */,
-				C5267CDB2746316200816DC1 /* ContentView.swift */,
 				C5992FAE274A9EC600D3402F /* EditActivityVC.swift */,
 				C5992FA6274A8CBB00D3402F /* ActiviesInSetVC.swift */,
 				C524027C274A86B5005B2D07 /* ActivitySetsForEditVC.swift */,
 				C5992FAA274A968900D3402F /* NewActivityVC.swift */,
 				C5992FA8274A950200D3402F /* newActivitySetVC.swift */,
-				C5240256274A2513005B2D07 /* activitiesInSet.swift */,
 				C524025C274A2F6D005B2D07 /* TimeSpend.swift */,
 				C5240258274A277D005B2D07 /* ActivitySets.swift */,
 				C53A5F5D2747575C008B9629 /* Events.swift */,
@@ -195,7 +192,6 @@
 				C5992FAB274A968900D3402F /* NewActivityVC.swift in Sources */,
 				C5240255274A24B9005B2D07 /* chooseActivitySetVC.swift in Sources */,
 				C520532F274910B900F24D17 /* newEventVC.swift in Sources */,
-				C5240257274A2513005B2D07 /* activitiesInSet.swift in Sources */,
 				C5992FAF274A9EC600D3402F /* EditActivityVC.swift in Sources */,
 				C549114D2750B31F002A5E05 /* ActivitySetsData.swift in Sources */,
 				C549114B2750B309002A5E05 /* EventsData.swift in Sources */,

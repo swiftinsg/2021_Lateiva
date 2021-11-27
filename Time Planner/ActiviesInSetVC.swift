@@ -13,7 +13,7 @@ struct ActiviesInSetVC: View {
     @State var setsa1 = [ActivitySets(name: "School", activities: [Activity(name1: "Brushing", timeSpending: 15, Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5), Activity(name1: "Bathing", timeSpending: 15, Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)]), ActivitySets(name: "Work", activities: [Activity(name1: "Dressing up", timeSpending: 15, Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)])]
     @State var isSheetEnabled5 = false
     @State var isSheetEnabled6 = false
-    @State var selectedEvent1: Activity? = nil
+    @State var selectedActivity: Activity? = nil
     @Binding var setsa: [ActivitySets]
     var body: some View {
         
@@ -65,7 +65,7 @@ struct ActiviesInSetVC: View {
                                     .foregroundColor(Color(red: 0.6431372549019608, green: 0.6078431372549019, blue: 0.9568627450980393))
                                 
                                 Button {
-                                    selectedEvent1 = activity
+                                    selectedActivity = activity
                                 } label: {
                                     Text("Edit")
                                         .foregroundColor(.white)
@@ -91,7 +91,7 @@ struct ActiviesInSetVC: View {
             })
             .navigationBarItems(trailing: EditButton())
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-            .sheet(item: $selectedEvent1){ selectedEvent1 in
+            .sheet(item: $selectedActivity){ selectedEvent1 in
                 EditActivityVC(event: selectedEvent1){editAction in
                     switch editAction {
                     case .cancel:
@@ -123,7 +123,7 @@ struct ActiviesInSetVC: View {
                                 setsa[index] = singleActivitySet
                             }
                         }
-                        self.selectedEvent1 = nil
+                        self.selectedActivity = nil
                         
                     }
                 }

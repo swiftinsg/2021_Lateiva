@@ -13,8 +13,8 @@ struct Activity : Identifiable, Codable {
     var timeSpending : Int
     var Percentage: String
     var Priority : String
-    var minTime : Double
-    var maxTime: Double
+    var minTime : Int
+    var maxTime: Int
 }
 
 

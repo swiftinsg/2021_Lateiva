@@ -12,6 +12,7 @@ struct TimeSpentVC: View {
     @State var activityArray: [Activity] = []
     @State var timeDiff: Int
     
+    
     init(something: ActivitySets, hello: Int) {
         self._set = State(initialValue: something)
         
@@ -40,12 +41,12 @@ struct TimeSpentVC: View {
     var leaveHouse = Text("6:00am") //Add actual code here to calculate when to leave house
     var body: some View {
         VStack(alignment:.leading){
-            Text("Leave your house by 6:00am")
-                .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                .font(.system(size: 18))
-                .lineLimit(3)
-                .padding(.horizontal)
-                .fixedSize(horizontal: false, vertical: true)
+//            Text("")
+//                .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+//                .font(.system(size: 18))
+//                .lineLimit(3)
+//                .padding(.horizontal)
+//                .fixedSize(horizontal: false, vertical: true)
             
             List(activityArray) { timings in
          //      if timings.minTime < timings.timeSpending {
@@ -77,11 +78,29 @@ struct TimeSpentVC: View {
                             
                             Spacer()
                             
-                            Text("\(timings.timeSpending) min")
-                                .font(.system(size: 18))
-                                .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
-                                .fontWeight(.medium)
+                                if  timings.timeSpending < timings.minTime {
+                                Text("0 min")
+                                    .font(.system(size: 18))
+                                    .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+                                    .fontWeight(.medium)
                                 .padding(.bottom)
+                            }
+                                else if timings.timeSpending > timings.maxTime {
+                                    Text("\(timings.maxTime) min")
+                                        .font(.system(size: 18))
+                                        .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+                                        .fontWeight(.medium)
+                                    .padding(.bottom)
+                                }
+                                else {
+                                    Text("\(timings.timeSpending) min")
+                                        .font(.system(size: 18))
+                                        .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+                                        .fontWeight(.medium)
+                                    .padding(.bottom)
+                                }
+                                            
+                            
                             
 
 
@@ -102,8 +121,10 @@ struct TimeSpentVC: View {
                             }
                             
                         }
-                        let sanjith1 = timeDiff/((time1.reduce(0, +))/(activityArray.count))
-                        for (index, sanjith) in activityArray.enumerated() {
+                        let newValue = time1[..<(activityArray.count+1)]
+                        let sanjith1 = timeDiff/(newValue.reduce(0, +))
+                        for (index, sanjith) in
+                            activityArray.enumerated() {
                             
                             if sanjith.Priority == "A Must Do"{
                                 
@@ -153,7 +174,8 @@ struct TimeSpentVC: View {
                             }
                             
                         }
-                        print(time1)
+                        print(newValue)
+                        
                         print(timeDiff)
                         print(sanjith1)
                         print(set.activities)
